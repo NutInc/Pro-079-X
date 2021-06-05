@@ -37,7 +37,7 @@ jobs:
       run: ./7zip.exe e References.zip -oPro079X/lib/ -r -y
 
     - name: Build
-      run: msbuild AmongSCP.sln -p:Configuration=release
+      run: msbuild Pro-079-x.sln -p:Configuration=release
 
     - name: Upload Build
       uses: actions/upload-artifact@v2
