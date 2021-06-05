@@ -17,9 +17,9 @@ namespace Pro079X
         public override void OnEnabled()
         {
             Singleton = this;
-            
+
             RegisterEvents();
-            
+
             base.OnEnabled();
         }
 
@@ -36,12 +36,12 @@ namespace Pro079X
         
         private void RegisterEvents()
         {
-            
+            PlayerHandlers.ChangingRole += EventHandlers.OnRoleChange;
         }
 
         private void UnRegisterEvents()
         {
-            
+            PlayerHandlers.ChangingRole -= EventHandlers.OnRoleChange;
         }
         
     }

@@ -1,7 +1,12 @@
-﻿namespace Pro079X
+﻿using Exiled.Events.EventArgs;
+
+namespace Pro079X
 {
-    public class EventHandlers
+    public static class EventHandlers
     {
-        
+        public static void OnRoleChange(ChangingRoleEventArgs ev)
+        {
+            
+        }
     }
 }
