@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pro-079-X", "Pro-079-X\Pro-079-X.csproj", "{F2C470C4-8D4D-47C8-9F7B-155D58169AEB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pro079X", "Pro079X", "{E989C597-2DCD-444C-9B25-8F28EAAF2DC9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{8E7E21B2-BFA5-4BC8-85B0-FB4096A72798}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ultimates", "Ultimates", "{DD0A0E4B-3B7F-439F-85F3-5BF4008B93CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2C470C4-8D4D-47C8-9F7B-155D58169AEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2C470C4-8D4D-47C8-9F7B-155D58169AEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2C470C4-8D4D-47C8-9F7B-155D58169AEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2C470C4-8D4D-47C8-9F7B-155D58169AEB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F2C470C4-8D4D-47C8-9F7B-155D58169AEB} = {E989C597-2DCD-444C-9B25-8F28EAAF2DC9}
+	EndGlobalSection
+EndGlobal
