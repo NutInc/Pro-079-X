@@ -16,7 +16,7 @@ jobs:
       uses: iRebbok/setup-nuget@master
     
     - name: Restore Packages
-      run: nuget restore Pr-079-X.sln
+      run: nuget restore Pro-079-X.sln
       
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1
