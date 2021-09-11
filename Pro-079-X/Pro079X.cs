@@ -8,7 +8,7 @@ namespace Pro079X
     
     public class Pro079X : Plugin<Config>
     {
-        public override string Author { get; } = "Parkeymon";
+        public override string Author { get; } = "Parkeymon and RedRanger";
         public override string Name { get; } = "Pro079X";
         public override Version Version { get; } = new Version(1, 0, 0);
         
@@ -37,11 +37,13 @@ namespace Pro079X
         private void RegisterEvents()
         {
             PlayerHandlers.ChangingRole += EventHandlers.OnRoleChange;
+            PlayerHandlers.Dying += EventHandlers.OnDying;
         }
 
         private void UnRegisterEvents()
         {
             PlayerHandlers.ChangingRole -= EventHandlers.OnRoleChange;
+            PlayerHandlers.Dying -= EventHandlers.OnDying;
         }
         
     }
