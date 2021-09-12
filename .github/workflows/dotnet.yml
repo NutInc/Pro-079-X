@@ -27,7 +27,7 @@ jobs:
     - name: Download references
       uses: carlosperate/download-file-action@v1.0.3
       with:
-        file-url: 'https://www.exiled.host/build_deps/References.zip'
+        file-url: 'https://www.exiled.host/build_deps/Master.zip'
         file-name: 'References.zip'
 
     - name: Download 7zip
@@ -40,10 +40,10 @@ jobs:
       run: ./7zip.exe e References.zip -oPro079X/lib/ -r -y
 
     - name: Build
-      run: msbuild Pro-079-x.sln -p:Configuration=release
+      run: msbuild Pro-079-X.sln -p:Configuration=release
 
     - name: Upload Build
       uses: actions/upload-artifact@v2
       with:
         name: Plugin DLL
-        path: AmongSCP/bin/Release/Pro079X*.dll
+        path: Pro-079-X/bin/Release/Pro079X*.dll
