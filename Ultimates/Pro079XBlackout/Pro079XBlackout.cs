@@ -22,7 +22,7 @@
 
             Translations = new Translations();
 
-            if (!Manager.RegisterUltimate(new BlackoutCommand())) ;
+            if (!Manager.RegisterUltimate(new BlackoutCommand()));
                 OnDisabled();
                 
             base.OnEnabled();

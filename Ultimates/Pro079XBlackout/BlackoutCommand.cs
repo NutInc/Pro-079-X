@@ -28,5 +28,5 @@
             yield return Timing.WaitForSeconds(12.1f);
             Map.TurnOffAllLights(Pro079XBlackout.Singleton.Config.BlackoutDuration);
         }
-    };
+    }
 }
