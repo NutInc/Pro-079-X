@@ -27,8 +27,8 @@ jobs:
     - name: Download references
       uses: carlosperate/download-file-action@v1.0.3
       with:
-        file-url: 'https://www.exiled.host/build_deps/Dev.zip'
-        file-name: 'Dev.zip'
+        file-url: 'https://www.exiled.host/build_deps/References.zip'
+        file-name: 'References.zip'
 
     - name: Download 7zip
       uses: carlosperate/download-file-action@v1.0.3
@@ -37,10 +37,10 @@ jobs:
         file-name: '7zip.exe'
 
     - name: Extract Refs
-      run: ./7zip.exe e Dev.zip -oPro079X/lib/ -r -y
+      run: ./7zip.exe e References.zip -oPro079X/lib/ -r -y
 
     - name: Build
-      run: msbuild Pro-079-x.sln -p:Configuration=release
+      run: msbuild Pro-079-X.sln -p:Configuration=release
 
     - name: Upload Build
       uses: actions/upload-artifact@v2
