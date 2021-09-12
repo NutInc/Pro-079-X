@@ -19,7 +19,7 @@ namespace Pro079.Commands
         
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
-            response = "Not Implemented yet";
+            response = "Not Implemented yet(troll)";
             return true;
         }
     }
