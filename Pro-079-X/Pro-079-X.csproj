@@ -33,10 +33,13 @@
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\Resources\libs\Assembly-CSharp-Publicized.dll</HintPath>
+          <HintPath>lib\Assembly-CSharp-Publicized.dll</HintPath>
         </Reference>
         <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\Resources\libs\Assembly-CSharp-firstpass.dll</HintPath>
+          <HintPath>lib\Assembly-CSharp-firstpass.dll</HintPath>
+        </Reference>
+        <Reference Include="CommandSystem.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>lib\CommandSystem.Core.dll</HintPath>
         </Reference>
         <Reference Include="Exiled.API, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\packages\EXILED.3.0.0-alpha.84\lib\net472\Exiled.API.dll</HintPath>
@@ -70,23 +73,38 @@
           <HintPath>..\packages\EXILED.3.0.0-alpha.84\lib\net472\Exiled.Updater.dll</HintPath>
           <Private>True</Private>
         </Reference>
-        <Reference Include="Mirror, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\Resources\libs\Mirror.dll</HintPath>
+        <Reference Include="NorthwoodLib, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>lib\NorthwoodLib.dll</HintPath>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
         <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\Resources\libs\UnityEngine.dll</HintPath>
+          <HintPath>lib\UnityEngine.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\Resources\libs\UnityEngine.CoreModule.dll</HintPath>
+          <HintPath>lib\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="YamlDotNet, Version=11.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e">
+          <HintPath>..\packages\YamlDotNet.11.2.1\lib\net45\YamlDotNet.dll</HintPath>
+          <Private>True</Private>
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Config.cs" />
+        <Compile Include="Commands\CentralCommand.cs" />
+        <Compile Include="Commands\SubCommands\SuicideCommand.cs" />
+        <Compile Include="Commands\SubCommands\TipsCommand.cs" />
+        <Compile Include="Configs\Config.cs" />
+        <Compile Include="Configs\Translations.cs" />
         <Compile Include="EventHandlers.cs" />
+        <Compile Include="Interfaces\ICommand079.cs" />
+        <Compile Include="Interfaces\ITranslations.cs" />
+        <Compile Include="Interfaces\IUltimate079.cs" />
+        <Compile Include="Logic\Extensions.cs" />
+        <Compile Include="Logic\Manager.cs" />
+        <Compile Include="Logic\Methods.cs" />
+        <Compile Include="Logic\TranslationManager.cs" />
         <Compile Include="Pro079X.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>

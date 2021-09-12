@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Exiled.API.Features;
 using Exiled.Events.EventArgs;
-using Exiled.API.Features;
+using Pro079X.Logic;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Pro079X
 {
@@ -8,20 +11,51 @@ namespace Pro079X
     {
         public static void OnRoleChange(ChangingRoleEventArgs ev)
         {
-            
-        }
-
-        public static void OnDying(DyingEventArgs ev)
-        {
-            Log.Debug($"Player who died: {ev.Target.Role}");
-            if (ev.Target.Role != RoleType.Scp079)
+            if (ev.NewRole != RoleType.Scp079)
             {
-                ev.IsAllowed = true;
+                Manager.CassieCooldowns.Remove(ev.Player);
                 return;
             }
-            
-            ev.Target.SetRole(RoleType.Scp93953); 
-            ev.IsAllowed = false;
+
+            Manager.CassieCooldowns[ev.Player] = DateTime.Now;
+            Manager.UltimateCooldowns[ev.Player] = DateTime.Now;
+
+            if (Pro079X.Singleton.Config.EnableSpawnBroadcast)
+            {
+                ev.Player.ClearBroadcasts();
+                ev.Player.Broadcast(10, "");
+            }
+
+            ev.Player.SendConsoleMessage("", "white");
+        }
+        
+        public static void OnDied(DiedEventArgs ev)
+        {
+            if (!Pro079X.Singleton.Config.SuicideCommand)
+                return;
+
+            List<Player> pcPlayers = Player.Get(RoleType.Scp079).ToList();
+            int pcCount = pcPlayers.Count;
+            if (ev.Target.Team != Team.SCP ||
+                ev.Target.Role == RoleType.Scp079 ||
+                pcCount < 0 ||
+                Player.Get(Team.SCP).Count() - pcCount > 0)
+                return;
+
+            Manager.CanSuicide = true;
+            if (string.IsNullOrEmpty(Pro079X.Singleton.Translations.Kys))
+                return;
+
+            for (int i = 0; i < pcCount; i++)
+                pcPlayers[i].Broadcast(5, "");
+        }
+        
+        public static void OnWaitingForPlayers()
+        {
+            Manager.CassieCooldowns.Clear();
+            Manager.CommandCooldowns.Clear();
+            Manager.UltimateCooldowns.Clear();
+            Manager.CanSuicide = false;
         }
     }
 }
