@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: Setup Nuget
-      uses: iRebbok/setup-nuget@master
+      uses: iRebbok/setup-nuget@3.0.0-alpha.84
     
     - name: Restore Packages
       run: nuget restore Pro-079-X.sln
