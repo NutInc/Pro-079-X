@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: Setup Nuget
-      uses: iRebbok/setup-nuget@3.0.0-alpha.84
+      uses: iRebbok/setup-nuget@master
     
     - name: Restore Packages
       run: nuget restore Pro-079-X.sln
@@ -28,7 +28,7 @@ jobs:
       uses: carlosperate/download-file-action@v1.0.3
       with:
         file-url: 'https://www.exiled.host/build_deps/Dev.zip'
-        file-name: 'References.zip'
+        file-name: 'Dev.zip'
 
     - name: Download 7zip
       uses: carlosperate/download-file-action@v1.0.3
@@ -37,7 +37,7 @@ jobs:
         file-name: '7zip.exe'
 
     - name: Extract Refs
-      run: ./7zip.exe e References.zip -oPro079X/lib/ -r -y
+      run: ./7zip.exe e Dev.zip -oPro079X/lib/ -r -y
 
     - name: Build
       run: msbuild Pro-079-x.sln -p:Configuration=release
