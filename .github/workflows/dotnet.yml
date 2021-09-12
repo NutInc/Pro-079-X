@@ -46,4 +46,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Plugin DLL
-        path: oPro-079-X/bin/Release/Pro079X*.dll
+        path: Pro-079-X/bin/Release/Pro079X*.dll
