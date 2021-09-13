@@ -1,15 +1,15 @@
-﻿using Exiled.API.Features;
-using Exiled.Events.EventArgs;
-using Pro079X.Logic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Pro079X
+﻿namespace Pro079X.Handlers
 {
-    public static class EventHandlers
+    using Exiled.API.Features;
+    using Exiled.Events.EventArgs;
+    using Logic;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    
+    public class PlayerHandlers
     {
-        public static void OnRoleChange(ChangingRoleEventArgs ev)
+        public void OnChangingRole(ChangingRoleEventArgs ev)
         {
             if (ev.NewRole != RoleType.Scp079)
             {
@@ -28,8 +28,8 @@ namespace Pro079X
 
             ev.Player.SendConsoleMessage("", "white");
         }
-        
-        public static void OnDied(DiedEventArgs ev)
+
+        public void OnDied(DiedEventArgs ev)
         {
             if (!Pro079X.Singleton.Config.SuicideCommand)
                 return;
@@ -48,14 +48,6 @@ namespace Pro079X
 
             for (int i = 0; i < pcCount; i++)
                 pcPlayers[i].Broadcast(5, "");
-        }
-        
-        public static void OnWaitingForPlayers()
-        {
-            Manager.CassieCooldowns.Clear();
-            Manager.CommandCooldowns.Clear();
-            Manager.UltimateCooldowns.Clear();
-            Manager.CanSuicide = false;
         }
     }
 }
