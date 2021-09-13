@@ -1,12 +1,12 @@
-﻿using Pro079X.Interfaces;
-using CommandSystem;
-using Exiled.API.Features;
-using Pro079X.Logic;
-using MEC;
-using System;
-
-namespace Pro079X.Commands
+﻿namespace Pro079X.Commands
 {
+    using Interfaces;
+    using CommandSystem;
+    using Exiled.API.Features;
+    using Logic;
+    using MEC;
+    using System;
+    
     [CommandHandler(typeof(ClientCommandHandler))]
     public class CentralCommand : ICommand
     {

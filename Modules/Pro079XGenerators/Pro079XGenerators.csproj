@@ -4,11 +4,11 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{F2C470C4-8D4D-47C8-9F7B-155D58169AEB}</ProjectGuid>
+        <ProjectGuid>{125EFB99-093A-4D86-A045-478DC9FD2C7D}</ProjectGuid>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Pro079X</RootNamespace>
-        <AssemblyName>Pro079X</AssemblyName>
+        <RootNamespace>Pro079XGenerators</RootNamespace>
+        <AssemblyName>Pro079XGenerators</AssemblyName>
         <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
@@ -33,84 +33,69 @@
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>lib\Assembly-CSharp-Publicized.dll</HintPath>
+          <HintPath>..\..\Pro-079-X\lib\Assembly-CSharp-Publicized.dll</HintPath>
         </Reference>
         <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>lib\Assembly-CSharp-firstpass.dll</HintPath>
+          <HintPath>..\..\Pro-079-X\lib\Assembly-CSharp-firstpass.dll</HintPath>
         </Reference>
         <Reference Include="CommandSystem.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>lib\CommandSystem.Core.dll</HintPath>
+          <HintPath>..\..\Pro-079-X\lib\CommandSystem.Core.dll</HintPath>
         </Reference>
         <Reference Include="Exiled.API, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\packages\EXILED.3.0.0-alpha.84\lib\net472\Exiled.API.dll</HintPath>
+          <HintPath>..\..\packages\EXILED.3.0.0-alpha.84\lib\net472\Exiled.API.dll</HintPath>
           <Private>True</Private>
         </Reference>
         <Reference Include="Exiled.Bootstrap, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\packages\EXILED.3.0.0-alpha.84\lib\net472\Exiled.Bootstrap.dll</HintPath>
+          <HintPath>..\..\packages\EXILED.3.0.0-alpha.84\lib\net472\Exiled.Bootstrap.dll</HintPath>
           <Private>True</Private>
         </Reference>
         <Reference Include="Exiled.CreditTags, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\packages\EXILED.3.0.0-alpha.84\lib\net472\Exiled.CreditTags.dll</HintPath>
+          <HintPath>..\..\packages\EXILED.3.0.0-alpha.84\lib\net472\Exiled.CreditTags.dll</HintPath>
           <Private>True</Private>
         </Reference>
         <Reference Include="Exiled.CustomItems, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\packages\EXILED.3.0.0-alpha.84\lib\net472\Exiled.CustomItems.dll</HintPath>
+          <HintPath>..\..\packages\EXILED.3.0.0-alpha.84\lib\net472\Exiled.CustomItems.dll</HintPath>
           <Private>True</Private>
         </Reference>
         <Reference Include="Exiled.Events, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\packages\EXILED.3.0.0-alpha.84\lib\net472\Exiled.Events.dll</HintPath>
+          <HintPath>..\..\packages\EXILED.3.0.0-alpha.84\lib\net472\Exiled.Events.dll</HintPath>
           <Private>True</Private>
         </Reference>
         <Reference Include="Exiled.Loader, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\packages\EXILED.3.0.0-alpha.84\lib\net472\Exiled.Loader.dll</HintPath>
+          <HintPath>..\..\packages\EXILED.3.0.0-alpha.84\lib\net472\Exiled.Loader.dll</HintPath>
           <Private>True</Private>
         </Reference>
         <Reference Include="Exiled.Permissions, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\packages\EXILED.3.0.0-alpha.84\lib\net472\Exiled.Permissions.dll</HintPath>
+          <HintPath>..\..\packages\EXILED.3.0.0-alpha.84\lib\net472\Exiled.Permissions.dll</HintPath>
           <Private>True</Private>
         </Reference>
         <Reference Include="Exiled.Updater, Version=3.1.1.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\packages\EXILED.3.0.0-alpha.84\lib\net472\Exiled.Updater.dll</HintPath>
+          <HintPath>..\..\packages\EXILED.3.0.0-alpha.84\lib\net472\Exiled.Updater.dll</HintPath>
           <Private>True</Private>
-        </Reference>
-        <Reference Include="NorthwoodLib, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>lib\NorthwoodLib.dll</HintPath>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
-        <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>lib\UnityEngine.dll</HintPath>
-        </Reference>
         <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>lib\UnityEngine.CoreModule.dll</HintPath>
-        </Reference>
-        <Reference Include="YamlDotNet, Version=9.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e">
-          <HintPath>..\packages\YamlDotNet.9.1.4\lib\net45\YamlDotNet.dll</HintPath>
-          <Private>True</Private>
+          <HintPath>..\..\Pro-079-X\lib\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Commands\CentralCommand.cs" />
-        <Compile Include="Commands\SubCommands\SuicideCommand.cs" />
-        <Compile Include="Commands\SubCommands\TipsCommand.cs" />
         <Compile Include="Configs\Config.cs" />
         <Compile Include="Configs\Translations.cs" />
-        <Compile Include="Handlers\PlayerHandlers.cs" />
-        <Compile Include="Handlers\ServerHandlers.cs" />
-        <Compile Include="Interfaces\ICommand079.cs" />
-        <Compile Include="Interfaces\ITranslations.cs" />
-        <Compile Include="Interfaces\IUltimate079.cs" />
-        <Compile Include="Logic\Extensions.cs" />
-        <Compile Include="Logic\Manager.cs" />
-        <Compile Include="Logic\Methods.cs" />
-        <Compile Include="Logic\TranslationManager.cs" />
-        <Compile Include="Pro079X.cs" />
+        <Compile Include="GeneratorCommand.cs" />
+        <Compile Include="Pro079XGenerators.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\..\Pro-079-X\Pro-079-X.csproj">
+        <Project>{f2c470c4-8d4d-47c8-9f7b-155d58169aeb}</Project>
+        <Name>Pro-079-X</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

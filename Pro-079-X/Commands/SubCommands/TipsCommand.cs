@@ -1,9 +1,9 @@
-﻿using System;
-using CommandSystem;
-using Pro079X.Interfaces;
-
-namespace Pro079.Commands
+﻿namespace Pro079X.Commands
 {
+    using System;
+    using CommandSystem;
+    using Interfaces;
+    
     public class TipsCommand : ICommand079
     {
         public string Command { get; }

@@ -1,23 +1,24 @@
-﻿using Pro079X.Commands;
-using Pro079X.Configs;
-using Exiled.API.Features;
-using Pro079X.Logic;
-using MEC;
-using System;
-using System.IO;
-using Pro079.Commands;
-using Pro079X.Commands.SubCommands;
-using PlayerHandlers = Exiled.Events.Handlers.Player;
-using ServerHandlers = Exiled.Events.Handlers.Server;
-
-namespace Pro079X
+﻿namespace Pro079X
 {
+    using Commands;
+    using Configs;
+    using Exiled.API.Features;
+    using Handlers;
+    using Logic;
+    using MEC;
+    using System;
+    using System.IO;
+    using PlayerEvents = Exiled.Events.Handlers.Player;
+    using ServerEvents = Exiled.Events.Handlers.Server;
+    
     public class Pro079X : Plugin<Config>
     {
         public static Pro079X Singleton;
         public Translations Translations;
+        private PlayerHandlers _playerHandlers;
+        private ServerHandlers _serverHandlers;
         
-        public override string Author { get; } = "Parkeymon and RedRanger";
+        public override string Author { get; } = "Nut Inc Development";
         public override string Name { get; } = "Pro079X";
         public override Version Version { get; } = new Version(1, 0, 0);
         
@@ -26,35 +27,40 @@ namespace Pro079X
         {
             if (!File.Exists(Config.TranslationsDirectory))
             {
-                File.Create(Config.TranslationsDirectory).Close();
+                try
+                {
+                    Log.Info("Attempting to create directory");
+                    Log.Info("Path: " + Path.Combine(Paths.Configs, "Pro079XTranslations.yml"));
+                    File.Create(Path.Combine(Paths.Configs,"Pro079XTranslations.yml")).Close();
+                }
+                catch (Exception e)
+                {
+                    Log.Error("There was an error: " + e);
+                }
             }
-            
+
             Singleton = this;
             Manager.LoadTranslations();
             Translations = new Translations();
-            
-            Manager.LoadTranslations();
-
+            _playerHandlers = new PlayerHandlers();
+            _serverHandlers = new ServerHandlers();
             RegisterEvents();
             if (Config.SuicideCommand)
-            {
                 Manager.RegisterCommand(new SuicideCommand());
-            }
-                
             if (Config.EnableTips)
                 Manager.RegisterCommand(new TipsCommand());
+            
             base.OnEnabled();
         }
 
         public override void OnDisabled()
         {
             UnRegisterEvents();
-
+            _playerHandlers = null;
+            _serverHandlers = null;
             foreach (var coroutineHandle in Manager.CoroutineHandles)
-            {
                 Timing.KillCoroutines(coroutineHandle);
-            }
-            
+
             Translations = null;
             Singleton = null;
             base.OnDisabled();
@@ -64,14 +70,16 @@ namespace Pro079X
         
         private void RegisterEvents()
         {
-            PlayerHandlers.ChangingRole += EventHandlers.OnRoleChange;
+            PlayerEvents.ChangingRole += _playerHandlers.OnChangingRole;
+            PlayerEvents.Died += _playerHandlers.OnDied;
+            ServerEvents.WaitingForPlayers += _serverHandlers.OnWaitingForPlayers;
         }
 
         private void UnRegisterEvents()
         {
-            PlayerHandlers.ChangingRole -= EventHandlers.OnRoleChange;
-            PlayerHandlers.Died -= EventHandlers.OnDied;
-            ServerHandlers.WaitingForPlayers -= EventHandlers.OnWaitingForPlayers;
+            PlayerEvents.ChangingRole -= _playerHandlers.OnChangingRole;
+            PlayerEvents.Died -= _playerHandlers.OnDied;
+            ServerEvents.WaitingForPlayers -= _serverHandlers.OnWaitingForPlayers;
         }
         
     }

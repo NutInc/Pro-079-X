@@ -1,12 +1,12 @@
-﻿using Pro079X.Interfaces;
-using Exiled.API.Features;
-using MEC;
-using System;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace Pro079X.Logic
+﻿namespace Pro079X.Logic
 {
+    using Interfaces;
+    using Exiled.API.Features;
+    using MEC;
+    using System;
+    using System.Collections.Generic;
+    using UnityEngine;
+    
     public static partial class Manager
     {
         public static readonly Dictionary<Player, DateTime> CassieCooldowns = new Dictionary<Player, DateTime>();

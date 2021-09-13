@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Pro079Blackout")]
+[assembly: AssemblyTitle("Pro079XBlackout")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Pro079Blackout")]
+[assembly: AssemblyProduct("Pro079XBlackout")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("A8B308A5-346F-4DCE-8305-69469DB26224")]
+[assembly: Guid("5A558496-0D78-46C2-8EE3-ADE6A3FFC437")]
 
 // Version information for an assembly consists of the following four values:
 //
