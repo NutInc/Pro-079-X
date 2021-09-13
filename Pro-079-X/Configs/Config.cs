@@ -1,8 +1,10 @@
-﻿using System.ComponentModel;
-using Exiled.API.Interfaces;
-
-namespace Pro079X.Configs
+﻿namespace Pro079X.Configs
 {
+    using Exiled.API.Features;
+    using Exiled.API.Interfaces;
+    using System.ComponentModel;
+    using System.IO;
+    
     public class Config : IConfig
     {
         public bool IsEnabled { get; set; } = true;

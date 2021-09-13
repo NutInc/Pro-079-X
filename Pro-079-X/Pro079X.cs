@@ -26,7 +26,18 @@
         public override void OnEnabled()
         {
             if (!File.Exists(Config.TranslationsDirectory))
-                File.Create(Config.TranslationsDirectory).Close();
+            {
+                try
+                {
+                    Log.Info("Attempting to create directory");
+                    Log.Info("Path: " + Path.Combine(Paths.Configs, "Pro079XTranslations.yml"));
+                    File.Create(Path.Combine(Paths.Configs,"Pro079XTranslations.yml")).Close();
+                }
+                catch (Exception e)
+                {
+                    Log.Error("There was an error: " + e);
+                }
+            }
 
             Singleton = this;
             Manager.LoadTranslations();
