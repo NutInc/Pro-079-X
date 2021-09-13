@@ -9,7 +9,7 @@
     {
         public bool IsEnabled { get; set; } = true;
 
-        public string TranslationsDirectory { get; private set; }
+        public string TranslationsDirectory { get; set; } 
 
         [Description("Enables use of the suicide command.")]
         public bool SuicideCommand { get; set; } = true;
