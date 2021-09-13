@@ -47,6 +47,7 @@ namespace Pro079X.Logic
         private static Dictionary<string, ITranslations> Load(string rawConfigs)
         {
             Log.Info("Loading Pro079X translation configs.");
+            Log.Debug("Translation Path LOAD: " + Pro079X.Singleton.Config.TranslationsDirectory);
             rawConfigs = Regex.Replace(rawConfigs, @"\ !.*", string.Empty)
                 .Replace("!Dictionary[string,IConfig]", string.Empty);
             Dictionary<string, object> rawDeserializedConfigs =
@@ -181,8 +182,10 @@ namespace Pro079X.Logic
         {
             try
             {
+                Log.Debug("Translation Path READ: " + Pro079X.Singleton.Config.TranslationsDirectory);
                 if (File.Exists(Pro079X.Singleton.Config.TranslationsDirectory))
                     return File.ReadAllText(Pro079X.Singleton.Config.TranslationsDirectory);
+                Log.Debug("Successfully read translations!");
             }
             catch (Exception exception)
             {

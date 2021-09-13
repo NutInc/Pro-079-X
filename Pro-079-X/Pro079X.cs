@@ -1,4 +1,6 @@
-﻿namespace Pro079X
+﻿using Exiled.API.Enums;
+
+namespace Pro079X
 {
     using Commands;
     using Configs;
@@ -21,25 +23,28 @@
         public override string Author { get; } = "Nut Inc Development";
         public override string Name { get; } = "Pro079X";
         public override Version Version { get; } = new Version(1, 0, 0);
-        
+        public override PluginPriority Priority { get; } = PluginPriority.Medium;
+
 
         public override void OnEnabled()
         {
+            Singleton = this;
+            
+            Config.TranslationsDirectory = Path.Combine(Paths.Configs, "Pro079XTranslations.yml");
+            Log.Debug("Path: " + Config.TranslationsDirectory);
             if (!File.Exists(Config.TranslationsDirectory))
             {
                 try
                 {
-                    Log.Info("Attempting to create directory");
-                    Log.Info("Path: " + Path.Combine(Paths.Configs, "Pro079XTranslations.yml"));
-                    File.Create(Path.Combine(Paths.Configs,"Pro079XTranslations.yml")).Close();
+                    Log.Info("Translation directory does not exist! Attempting to create directory!");
+                    File.Create(Config.TranslationsDirectory).Close();
                 }
                 catch (Exception e)
                 {
                     Log.Error("There was an error: " + e);
                 }
             }
-
-            Singleton = this;
+            
             Manager.LoadTranslations();
             Translations = new Translations();
             _playerHandlers = new PlayerHandlers();
