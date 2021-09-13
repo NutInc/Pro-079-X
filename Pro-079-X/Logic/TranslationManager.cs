@@ -47,7 +47,6 @@ namespace Pro079X.Logic
         private static Dictionary<string, ITranslations> Load(string rawConfigs)
         {
             Log.Info("Loading Pro079X translation configs.");
-            Log.Debug("Translation Path LOAD: " + Pro079X.Singleton.Config.TranslationsDirectory);
             rawConfigs = Regex.Replace(rawConfigs, @"\ !.*", string.Empty)
                 .Replace("!Dictionary[string,IConfig]", string.Empty);
             Dictionary<string, object> rawDeserializedConfigs =
@@ -60,9 +59,15 @@ namespace Pro079X.Logic
             }
             else
             {
-                deserializedConfigs.Add("Pro079X",
-                    Deserializer.Deserialize<Translations>(Serializer.Serialize(rawDeserializedConfig)));
-                Pro079X.Singleton.Translations.CopyProperties(deserializedConfigs["Pro079X"]);
+                try
+                {
+                    deserializedConfigs.Add("Pro079X",
+                        Deserializer.Deserialize<Translations>(Serializer.Serialize(rawDeserializedConfig)));
+                    Pro079X.Singleton.Translations.CopyProperties(deserializedConfigs["Pro079X"]);
+                } catch (Exception e)
+                {
+                    Log.Error("ERROR DESERIALIZING TRANSLATIONS! " + e);
+                }
             }
 
             var plugins = Loader.Plugins.ToList();
@@ -77,7 +82,7 @@ namespace Pro079X.Logic
                 if (plugin.Prefix == Pro079X.Singleton.Prefix)
                     continue;
 
-                Tuple<Type, ITranslations> translations = CreateTranslations(plugin.Assembly);
+                var translations = CreateTranslations(plugin.Assembly);
                 if (translations == null)
                     continue;
 

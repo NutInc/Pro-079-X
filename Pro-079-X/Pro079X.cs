@@ -28,8 +28,6 @@ namespace Pro079X
 
         public override void OnEnabled()
         {
-            Singleton = this;
-            
             Config.TranslationsDirectory = Path.Combine(Paths.Configs, "Pro079XTranslations.yml");
             Log.Debug("Path: " + Config.TranslationsDirectory);
             if (!File.Exists(Config.TranslationsDirectory))
@@ -45,8 +43,9 @@ namespace Pro079X
                 }
             }
             
-            Manager.LoadTranslations();
+            Singleton = this;
             Translations = new Translations();
+            Manager.LoadTranslations();
             _playerHandlers = new PlayerHandlers();
             _serverHandlers = new ServerHandlers();
             RegisterEvents();
