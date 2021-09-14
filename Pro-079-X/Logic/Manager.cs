@@ -33,16 +33,9 @@
 
         public static bool RegisterUltimate(IUltimate079 ultimate079)
         {
-            try
-            {
-                if (!Pro079X.Singleton.Config.EnableUltimates || Ultimates.Contains(ultimate079))
+            if (!Pro079X.Singleton.Config.EnableUltimates || Ultimates.Contains(ultimate079))
                     return false;
-            }
-            catch (Exception e)
-            {
-                Log.Error($"Check null ref: {Pro079X.Singleton == null }");
-                return false;
-            }
+
             Log.Debug($"Registering the {ultimate079.Command} Ultimate...");
             Ultimates.Add(ultimate079);
             Log.Debug($"Ultimate {ultimate079.Command} registered!");
