@@ -23,7 +23,7 @@ namespace Pro079X
         public override string Author { get; } = "Nut Inc Development";
         public override string Name { get; } = "Pro079X";
         public override Version Version { get; } = new Version(1, 0, 0);
-        public override PluginPriority Priority { get; } = PluginPriority.Medium;
+        public override PluginPriority Priority { get; } = PluginPriority.First;
 
 
         public override void OnEnabled()

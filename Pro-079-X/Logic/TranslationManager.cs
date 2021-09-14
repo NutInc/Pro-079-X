@@ -172,7 +172,6 @@ namespace Pro079X.Logic
             {
                 if (configs == null || configs.Count == 0)
                     return false;
-
                 return Save(Serializer.Serialize(configs));
             }
             catch (YamlException yamlException)
