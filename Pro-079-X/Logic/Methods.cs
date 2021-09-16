@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using System.Text;
+using CommandSystem;
 using NorthwoodLib.Pools;
 using Pro079X.Interfaces;
 
@@ -119,6 +120,31 @@ namespace Pro079X.Logic
                 ultimate079.Command == command || ultimate079.Aliases.Any(alias => alias == command));
         }
 
+        public static bool UltimateExists(string command)
+        {
+            try
+            {
+                return Manager.Ultimates.FirstOrDefault(ultimate079 =>
+                    ultimate079.Command == command || ultimate079.Aliases.Any(alias => alias == command)) != null;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        
+        public static bool CommandExists(string command)
+        {
+            try
+            {
+                return Manager.Commands.FirstOrDefault(command079 =>
+                    command079.Command == command || command079.Aliases.Any(alias => alias == command)) != null;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         public static string LevelString(int level, bool uppercase = true)
         {
             if (uppercase || char.IsDigit(Pro079X.Singleton.Translations.Level[0]))

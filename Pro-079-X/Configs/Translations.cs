@@ -33,7 +33,7 @@ namespace Pro079X.Configs
         public string TipsMsg { get; set; } =
             @"TAB (above Caps Lock): opens up the map.\\nSpacebar: switches the camera view from the normal mode to the FPS one (with the white dot).\\nWASD: move to the camera the plugin says\nTo get out of the Heavy Containment Zone, go to the elevator (with TAB) and click the floor's white rectangle, or to the checkpoint and press WASD to get out\\nAdditionally, this plugin provides extra commands by typing '.079' in the console";
 
-        public string UnknownCmd { get; set; } = "Unknown command. Type \".079\" for help.";
+        public string UnknownCmd { get; set; } = "Unknown command or ambigous reference between command and ultimate. Type \".079\" for help.";
         public string CassieReady { get; set; } = "<color=#85ff4c>Announcer (CASSIE) commands ready</color>";
         public string UltReady { get; set; } = "<color=#85ff4c>Ultimates ready</color>";
         public string CantSuicide { get; set; } = "You can't suicide when there's other SCP's remaining";

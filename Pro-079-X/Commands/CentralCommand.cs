@@ -25,9 +25,19 @@
 
             response = Methods.GetHelp();
             if (arguments.Count == 0)
+            {
                 return false;
+            }
+            
+            Log.Debug(arguments.At(0));
+            ICommand079 command = null;
 
-            ICommand079 command = Methods.GetCommand(arguments.At(0));
+            if (Methods.CommandExists(arguments.At(0)))
+            {
+                command = Methods.GetCommand(arguments.At(0));
+            }
+                
+
             if (command != null)
             {
                 if (Pro079X.Singleton.Config.EnableCassieCooldown && ply.OnCassieCooldown())
@@ -79,9 +89,18 @@
                     return true;
                 }
 
-                IUltimate079 ultimate = Methods.GetUltimate(arguments.At(1));
+                IUltimate079 ultimate = null;
+
+                if (Methods.UltimateExists(arguments.At(1)))
+                {
+                    ultimate = Methods.GetUltimate(arguments.At(1));
+                }
+                
                 if (ultimate == null)
+                {
+                    Log.Debug("Invoked and returning");
                     return true;
+                }
 
                 if (ply.OnUltimateCooldown())
                 {
