@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using System.Text;
 using CommandSystem;
+using Exiled.API.Features;
 using NorthwoodLib.Pools;
 using Pro079X.Interfaces;
 
@@ -122,6 +123,8 @@ namespace Pro079X.Logic
 
         public static bool UltimateExists(string command)
         {
+            Log.Debug($"Method UltimateExists() invoked with ultimate {command}");
+            Manager.Ultimates.ForEach(action=>Log.Debug($"Ultimate: {action.Command}"));
             try
             {
                 return Manager.Ultimates.FirstOrDefault(ultimate079 =>
@@ -129,6 +132,7 @@ namespace Pro079X.Logic
             }
             catch
             {
+                Log.Debug($"Ultimate {command} does not exist!");
                 return false;
             }
         }
@@ -142,6 +146,7 @@ namespace Pro079X.Logic
             }
             catch
             {
+                Log.Debug($"Command {command} does not exist!");
                 return false;
             }
         }

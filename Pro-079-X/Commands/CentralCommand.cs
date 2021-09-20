@@ -93,15 +93,16 @@
 
                 if (Methods.UltimateExists(arguments.At(1)))
                 {
+                    Log.Debug("Ultimate is not null!");
                     ultimate = Methods.GetUltimate(arguments.At(1));
                 }
                 
                 if (ultimate == null)
                 {
-                    Log.Debug("Invoked and returning");
+                    Log.Debug("Invoked and returning ultimate");
                     return true;
                 }
-
+                
                 if (ply.OnUltimateCooldown())
                 {
                     response = Pro079X.Singleton.Translations.Cooldown;
@@ -122,7 +123,7 @@
                         return false;
                     }
                 }
-
+                
                 bool success = ultimate.Execute(arguments, sender, out response);
 
                 if (!success)

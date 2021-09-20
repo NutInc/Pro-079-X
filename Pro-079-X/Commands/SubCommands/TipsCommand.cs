@@ -6,7 +6,7 @@
     
     public class TipsCommand : ICommand079
     {
-        public string Command { get; }
+        public string Command { get; } = "funne";
         public string[] Aliases { get; }
         public string Description { get; }
         public string ExtraArguments { get; }
