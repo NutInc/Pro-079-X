@@ -1,14 +1,12 @@
-﻿using Pro079X.Interfaces;
-using System;
-using System.Linq;
-using System.Text;
-using CommandSystem;
-using Exiled.API.Features;
-using NorthwoodLib.Pools;
-using Pro079X.Interfaces;
-
-namespace Pro079X.Logic
+﻿namespace Pro079X.Logic
 {
+    using Interfaces;
+    using System;
+    using System.Linq;
+    using System.Text;
+    using CommandSystem;
+    using Exiled.API.Features;
+    using NorthwoodLib.Pools;
     public static class Methods
     {
         private static string _helpMessage;

@@ -1,23 +1,23 @@
-﻿using Pro079X.Interfaces;
-using Pro079X.Configs;
-using Exiled.API.Extensions;
-using Exiled.API.Features;
-using Exiled.API.Interfaces;
-using Exiled.Loader;
-using Exiled.Loader.Features.Configs;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text.RegularExpressions;
-using YamlDotNet.Core;
-using YamlDotNet.Serialization;
-using YamlDotNet.Serialization.NamingConventions;
-using YamlDotNet.Serialization.NodeDeserializers;
-
-namespace Pro079X.Logic
+﻿namespace Pro079X.Logic
 {
+    using Interfaces;
+    using Configs;
+    using Exiled.API.Extensions;
+    using Exiled.API.Features;
+    using Exiled.API.Interfaces;
+    using Exiled.Loader;
+    using Exiled.Loader.Features.Configs;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Reflection;
+    using System.Text.RegularExpressions;
+    using YamlDotNet.Core;
+    using YamlDotNet.Serialization;
+    using YamlDotNet.Serialization.NamingConventions;
+    using YamlDotNet.Serialization.NodeDeserializers;
+    
     /// The majority of the TranslationManager partial is nabbed from <see cref="Exiled.Loader.ConfigManager"/> and <see cref="Exiled.Loader.Loader"/> because I'm still bad at this type of thing.
     public static partial class Manager
     {

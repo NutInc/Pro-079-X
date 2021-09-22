@@ -1,7 +1,6 @@
-﻿using Pro079X.Interfaces;
-
-namespace Pro079X.Configs
+﻿namespace Pro079X.Configs
 {
+    using Interfaces;
     public class Translations : ITranslations
     {
         public string Command { get; set; } = "079";

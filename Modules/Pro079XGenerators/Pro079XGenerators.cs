@@ -27,7 +27,7 @@
             base.OnDisabled();
         }
 
-        public override string Author => "Build";
+        public override string Author => "NutInc";
         public override Version Version => new Version(4, 0, 0);
     }
 }

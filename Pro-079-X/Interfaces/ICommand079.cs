@@ -1,7 +1,6 @@
-﻿using CommandSystem;
-
-namespace Pro079X.Interfaces
+﻿namespace Pro079X.Interfaces
 {
+    using CommandSystem;
     public interface ICommand079 : ICommand
     {
         string ExtraArguments { get; }

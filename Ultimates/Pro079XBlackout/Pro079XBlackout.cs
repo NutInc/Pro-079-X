@@ -1,11 +1,11 @@
-﻿using Pro079X.Interfaces;
-using Pro079X.Configs;
-using System;
-using Exiled.API.Features;
-using Pro079X.Logic;
-
-namespace Pro079XBlackout
+﻿namespace Pro079XBlackout
 {
+    using Pro079X.Interfaces;
+    using Pro079X.Configs;
+    using System;
+    using Exiled.API.Features;
+    using Pro079X.Logic;
+    
     public class Pro079XBlackout : Plugin<Configs.Config>
     {
         public override string Author { get; } = "Nut Inc";
@@ -23,8 +23,8 @@ namespace Pro079XBlackout
             Singleton = this;
 
             Translations = new Configs.Translations();
- 
-            Log.Debug($"Loaded in blackout: {Manager.RegisterUltimate(new BlackoutCommand())}");
+
+            Manager.RegisterUltimate(new BlackoutCommand());
         }
 
         public override void OnDisabled()

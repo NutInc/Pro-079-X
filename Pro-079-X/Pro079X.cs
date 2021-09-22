@@ -1,7 +1,6 @@
-﻿using Exiled.API.Enums;
-
-namespace Pro079X
+﻿namespace Pro079X
 {
+    using Exiled.API.Enums;
     using Commands;
     using Configs;
     using Exiled.API.Features;

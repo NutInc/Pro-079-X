@@ -1,12 +1,11 @@
-﻿using Pro079X.Interfaces;
-using Exiled.API.Features;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Pro079X.Logic
+﻿namespace Pro079X.Logic
 {
+    using Interfaces;
+    using Exiled.API.Features;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
     public static class Extensions
     {
         public static bool IsScp079(this Player ply) => ply.Role == RoleType.Scp079;
