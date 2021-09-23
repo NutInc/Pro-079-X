@@ -1,13 +1,13 @@
-﻿using System.Linq;
-using Exiled.API.Features;
-using Exiled.API.Features.Items;
-
-namespace Pro079XGrenade
+﻿namespace Pro079XGrenade
 {
     using System;
     using CommandSystem;
     using Pro079X.Interfaces;
     using System.Collections.Generic;
+    using System.Linq;
+    using Exiled.API.Features;
+    using Exiled.API.Features.Items;
+
     public class GrenadeSpawn : IUltimate079
     {
         public string Command { get; } = Pro079XGrenade.Plugin.Singleton.Translations.Command;

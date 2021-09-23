@@ -35,11 +35,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="EXILED" Version="3.0.0-alpha.84" />
+      <ProjectReference Include="..\..\Pro-079-X\Pro-079-X.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Pro-079-X\Pro-079-X.csproj" />
+      <PackageReference Include="EXILED" Version="3.0.0-alpha.84" />
     </ItemGroup>
 
 </Project>
