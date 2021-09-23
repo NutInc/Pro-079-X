@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using Exiled.API.Features;
 using Exiled.API.Features.Items;
-using InventorySystem.Items.ThrowableProjectiles;
 
 namespace Pro079XGrenade
 {
