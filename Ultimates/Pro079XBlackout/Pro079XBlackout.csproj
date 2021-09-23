@@ -73,9 +73,6 @@
           <HintPath>..\..\packages\EXILED.3.0.0-alpha.84\lib\net472\Exiled.Updater.dll</HintPath>
           <Private>True</Private>
         </Reference>
-        <Reference Include="Pro079X, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\Pro-079-X\bin\Debug\Pro079X.dll</HintPath>
-        </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
@@ -92,6 +89,10 @@
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
+      <ProjectReference Include="..\..\Modules\Pro079XGenerators\Pro079XGenerators.csproj">
+        <Project>{125efb99-093a-4d86-a045-478dc9fd2c7d}</Project>
+        <Name>Pro079XGenerators</Name>
+      </ProjectReference>
       <ProjectReference Include="..\..\Pro-079-X\Pro-079-X.csproj">
         <Project>{f2c470c4-8d4d-47c8-9f7b-155d58169aeb}</Project>
         <Name>Pro-079-X</Name>

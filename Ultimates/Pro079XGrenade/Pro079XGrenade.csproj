@@ -26,9 +26,6 @@
       <Reference Include="Mirror, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
         <HintPath>lib\Mirror.dll</HintPath>
       </Reference>
-      <Reference Include="Pro079X, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-        <HintPath>lib\Pro079X.dll</HintPath>
-      </Reference>
       <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
         <HintPath>lib\UnityEngine.dll</HintPath>
       </Reference>
@@ -39,6 +36,10 @@
 
     <ItemGroup>
       <PackageReference Include="EXILED" Version="3.0.0-alpha.84" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Pro-079-X\Pro-079-X.csproj" />
     </ItemGroup>
 
 </Project>
