@@ -7,7 +7,7 @@
     
     public class Pro079XBlackout : Plugin<Configs.Config>
     {
-        public override string Author { get; } = "Nut Inc";
+        public override string Author { get; } = "NutInc";
         public override string Name { get; } = "Pro079XBlackout";
         public override string Prefix { get; } = "pro079x_blackout";
         public override Version Version { get; } = new Version(1, 0, 0);
