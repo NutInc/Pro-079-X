@@ -29,7 +29,6 @@
                 return false;
             }
             
-            Log.Debug(arguments.At(0));
             ICommand079 command = null;
 
             if (Methods.CommandExists(arguments.At(0)))
