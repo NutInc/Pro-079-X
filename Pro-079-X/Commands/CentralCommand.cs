@@ -19,7 +19,7 @@
             Player ply = Player.Get((sender as CommandSender)?.SenderId);
             if (!ply.IsScp079())
             {
-                response = Pro079X.Singleton.Translations.NotScp079;
+                response = Pro079X.Singleton?.Translation.NotScp079;
                 return false;
             }
 
@@ -41,13 +41,13 @@
             {
                 if (Pro079X.Singleton.Config.EnableCassieCooldown && ply.OnCassieCooldown())
                 {
-                    response = Pro079X.Singleton.Translations.CassieOnCooldown;
+                    response = Pro079X.Singleton?.Translation.CassieOnCooldown;
                     return false;
                 }
 
                 if (ply.OnCommandCooldown(command))
                 {
-                    response = Pro079X.Singleton.Translations.Cooldown;
+                    response = Pro079X.Singleton?.Translation.Cooldown;
                     return false;
                 }
 
@@ -55,13 +55,13 @@
                 {
                     if (command.Cost > ply.Energy)
                     {
-                        response = Pro079X.Singleton.Translations.LowEnergy;
+                        response = Pro079X.Singleton?.Translation.LowEnergy;
                         return false;
                     }
 
                     if (command.MinLevel > ply.Level)
                     {
-                        response = Pro079X.Singleton.Translations.LowLevel;
+                        response = Pro079X.Singleton?.Translation.LowLevel;
                         return false;
                     }
                 }
@@ -80,7 +80,7 @@
                 return true;
             }
 
-            if (arguments.At(0) == Pro079X.Singleton.Translations.UltCmd)
+            if (arguments.At(0) == Pro079X.Singleton?.Translation.UltCmd)
             {
                 if (arguments.Count < 2)
                 {
@@ -104,7 +104,7 @@
                 
                 if (ply.OnUltimateCooldown())
                 {
-                    response = Pro079X.Singleton.Translations.Cooldown;
+                    response = Pro079X.Singleton?.Translation.Cooldown;
                     return false;
                 }
 
@@ -112,13 +112,13 @@
                 {
                     if (ply.Energy < ultimate.Cost)
                     {
-                        response = Pro079X.Singleton.Translations.LowEnergy;
+                        response = Pro079X.Singleton?.Translation.LowEnergy;
                         return false;
                     }
 
                     if (ply.Level < Pro079X.Singleton.Config.UltimateLevel)
                     {
-                        response = Pro079X.Singleton.Translations.LowLevel;
+                        response = Pro079X.Singleton?.Translation.LowLevel;
                         return false;
                     }
                 }
