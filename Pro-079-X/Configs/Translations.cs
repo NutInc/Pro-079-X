@@ -1,12 +1,24 @@
-﻿namespace Pro079X.Configs
+﻿
+
+namespace Pro079X.Configs
 {
-    using Interfaces;
-    public class Translations : ITranslations
+    using Exiled.API.Interfaces;
+    using System.ComponentModel;
+
+    
+    public class Translations : ITranslation
     {
+        [Description("The root 079 command")]
         public string Command { get; set; } = "079";
+        
+        [Description("The description listed in-game for the command")]
         public string Description { get; set; } = "The main command for Pro079.";
+        
+        [Description("The listed usage for the base 079 command in-game")]
         public string Usage { get; set; } = ".079 <Command>";
+        
         public string Disabled { get; set; } = "This command is disabled.";
+        
         public string Level { get; set; } = "level $lvl";
         public string Energy { get; set; } = "$ap ap";
         public string LowLevel { get; set; } = "Your level is too low (Level $min required)";
