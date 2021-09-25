@@ -8,9 +8,9 @@
     using Exiled.API.Extensions; 
     public class SuicideCommand : ICommand079
     {
-        public string Command => Pro079X.Singleton.Translations.SuicideCmd;
+        public string Command => Pro079X.Singleton.Translation.SuicideCmd;
         public string[] Aliases => Array.Empty<string>();
-        public string Description => Pro079X.Singleton.Translations.SuicideHelp;
+        public string Description => Pro079X.Singleton?.Translation.SuicideHelp;
 
         public string ExtraArguments { get; }
         public bool Cassie { get; }
@@ -24,11 +24,11 @@
             if (Manager.CanSuicide)
             {
                 ply.Kill(DamageTypes.Recontainment);
-                response = Pro079X.Singleton.Translations.Success;
+                response = Pro079X.Singleton?.Translation.Success;
                 return true;
             }
 
-            response = Pro079X.Singleton.Translations.CantSuicide;
+            response = Pro079X.Singleton?.Translation.CantSuicide;
             return false;
         }
 

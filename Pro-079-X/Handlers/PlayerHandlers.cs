@@ -43,7 +43,7 @@
                 return;
 
             Manager.CanSuicide = true;
-            if (string.IsNullOrEmpty(Pro079X.Singleton.Translations.Kys))
+            if (string.IsNullOrEmpty(Pro079X.Singleton.Translation.Kys))
                 return;
 
             for (int i = 0; i < pcCount; i++)

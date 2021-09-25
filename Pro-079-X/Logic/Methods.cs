@@ -60,13 +60,13 @@
             foreach (var ultimate in Manager.Ultimates)
             {
                 stringBuilder.AppendLine("<b>.079");
-                stringBuilder.Append(Pro079X.Singleton.Translations.UltCmd);
+                stringBuilder.Append(Pro079X.Singleton.Translation.UltCmd);
                 stringBuilder.Append(" ");
                 stringBuilder.Append(ultimate.Command);
                 stringBuilder.Append("</b>");
                 stringBuilder.Append(" - ");
                 stringBuilder.Append(ultimate.Description);
-                stringBuilder.Append(Pro079X.Singleton.Translations.UltData);
+                stringBuilder.Append(Pro079X.Singleton?.Translation.UltData);
                 stringBuilder.Append(stringBuilder.ToString()
                     .ReplaceAfterToken('$', new[]
                     {
@@ -84,9 +84,9 @@
         {
             StringBuilder stringBuilder = StringBuilderPool.Shared.Rent();
             if (energy > 0)
-                stringBuilder.Append(Pro079X.Singleton.Translations.Energy);
+                stringBuilder.Append(Pro079X.Singleton?.Translation.Energy);
             if (level > 1)
-                stringBuilder.Append(Pro079X.Singleton.Translations.Level);
+                stringBuilder.Append(Pro079X.Singleton?.Translation.Level);
 
             string str = stringBuilder.ToString();
             StringBuilderPool.Shared.Return(stringBuilder);
@@ -150,13 +150,13 @@
         }
         public static string LevelString(int level, bool uppercase = true)
         {
-            if (uppercase || char.IsDigit(Pro079X.Singleton.Translations.Level[0]))
+            if (uppercase || char.IsDigit(Pro079X.Singleton.Translation.Level[0]))
             {
-                return char.ToUpper(Pro079X.Singleton.Translations.Level[0])
-                       + Pro079X.Singleton.Translations.Level.Substring(1).Replace("$lvl", level.ToString());
+                return char.ToUpper(Pro079X.Singleton.Translation.Level[0])
+                       + Pro079X.Singleton?.Translation.Level.Substring(1).Replace("$lvl", level.ToString());
             }
 
-            return Pro079X.Singleton.Translations.Level.Replace("$lvl", level.ToString());
+            return Pro079X.Singleton?.Translation.Level.Replace("$lvl", level.ToString());
         }
     }
 }

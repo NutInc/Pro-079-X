@@ -12,10 +12,9 @@
     using PlayerEvents = Exiled.Events.Handlers.Player;
     using ServerEvents = Exiled.Events.Handlers.Server;
     
-    public class Pro079X : Plugin<Config>
+    public class Pro079X : Plugin<Config, Translations>
     {
         public static Pro079X Singleton;
-        public Translations Translations;
         private PlayerHandlers _playerHandlers;
         private ServerHandlers _serverHandlers;
         
@@ -43,8 +42,6 @@
             }
             
             Singleton = this;
-            Translations = new Translations();
-            Manager.LoadTranslations();
             _playerHandlers = new PlayerHandlers();
             _serverHandlers = new ServerHandlers();
             RegisterEvents();
@@ -63,8 +60,7 @@
             _serverHandlers = null;
             foreach (var coroutineHandle in Manager.CoroutineHandles)
                 Timing.KillCoroutines(coroutineHandle);
-
-            Translations = null;
+            
             Singleton = null;
             base.OnDisabled();
         }
