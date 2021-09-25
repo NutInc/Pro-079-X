@@ -121,7 +121,7 @@
                         return false;
                     }
 
-                    if (ply.Level < Pro079X.Singleton.Config.UltimateLevel)
+                    if (ply.Level < Pro079X.Singleton?.Config.UltimateLevel)
                     {
                         response = Pro079X.Singleton?.Translation.LowLevel;
                         return false;
