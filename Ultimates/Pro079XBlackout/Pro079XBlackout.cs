@@ -1,6 +1,5 @@
 ﻿namespace Pro079XBlackout
 {
-    using Pro079X.Interfaces;
     using System;
     using Exiled.API.Features;
     using Pro079X.Logic;
@@ -20,7 +19,6 @@
             base.OnEnabled();
             Singleton = this;
             
-
             Manager.RegisterUltimate(new BlackoutCommand());
         }
 

@@ -1,10 +1,7 @@
-﻿
-
-namespace Pro079X.Configs
+﻿namespace Pro079X.Configs
 {
     using Exiled.API.Interfaces;
     using System.ComponentModel;
-
     
     public class Translations : ITranslation
     {
