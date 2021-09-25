@@ -100,7 +100,6 @@
         <Compile Include="Handlers\PlayerHandlers.cs" />
         <Compile Include="Handlers\ServerHandlers.cs" />
         <Compile Include="Interfaces\ICommand079.cs" />
-        <Compile Include="Interfaces\ITranslations.cs" />
         <Compile Include="Interfaces\IUltimate079.cs" />
         <Compile Include="Logic\Extensions.cs" />
         <Compile Include="Logic\Manager.cs" />
