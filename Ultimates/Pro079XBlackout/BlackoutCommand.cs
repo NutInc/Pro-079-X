@@ -16,6 +16,7 @@
         public int Cost { get; } = Pro079XBlackout.Singleton.Config.Cost;
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
+            Log.Debug("Execute() invoked!");
             Timing.RunCoroutine(RunUltimate());
             response = Pro079X.Pro079X.Singleton?.Translation.Command;
             return true;

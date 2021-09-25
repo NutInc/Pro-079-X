@@ -8,7 +8,7 @@
 
     public class Pro079XGrenade : Plugin<Configs.Config, Configs.Translations>
     {
-        public override string Author { get; } = "NutInc";
+        public override string Author { get; } = "Nut Inc";
         public override string Name { get; } = "Pro079XGrenade";
         public override string Prefix { get; } = "pro_079_grenade";
         public override Version Version { get; } = new Version(1, 0, 0);

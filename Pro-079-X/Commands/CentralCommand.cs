@@ -16,6 +16,11 @@
         
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
+            foreach (var a in Manager.Ultimates)
+            {
+                Log.Debug($"Possible command {a.Command}");
+            }
+            
             Player ply = Player.Get((sender as CommandSender)?.SenderId);
             if (!ply.IsScp079())
             {

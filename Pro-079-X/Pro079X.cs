@@ -18,7 +18,7 @@
         private PlayerHandlers _playerHandlers;
         private ServerHandlers _serverHandlers;
         
-        public override string Author { get; } = "NutInc";
+        public override string Author { get; } = "Nut Inc Development";
         public override string Name { get; } = "Pro079X";
         public override Version Version { get; } = new Version(1, 0, 0);
         public override PluginPriority Priority { get; } = PluginPriority.First;
@@ -26,21 +26,6 @@
 
         public override void OnEnabled()
         {
-            Config.TranslationsDirectory = Path.Combine(Paths.Configs, "Pro079XTranslations.yml");
-            Log.Debug("Path: " + Config.TranslationsDirectory);
-            if (!File.Exists(Config.TranslationsDirectory))
-            {
-                try
-                {
-                    Log.Info("Translation directory does not exist! Attempting to create directory!");
-                    File.Create(Config.TranslationsDirectory).Close();
-                }
-                catch (Exception e)
-                {
-                    Log.Error("There was an error: " + e);
-                }
-            }
-            
             Singleton = this;
             _playerHandlers = new PlayerHandlers();
             _serverHandlers = new ServerHandlers();
