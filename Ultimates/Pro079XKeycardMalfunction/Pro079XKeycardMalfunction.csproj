@@ -5,6 +5,18 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Compile Remove="lib\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="lib\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="lib\**" />
+    </ItemGroup>
+
+    <ItemGroup>
       <ProjectReference Include="..\..\Pro-079-X\Pro-079-X.csproj" />
     </ItemGroup>
 
@@ -16,11 +28,11 @@
       <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
         <HintPath>lib\Assembly-CSharp-Publicized.dll</HintPath>
       </Reference>
+      <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>lib\Assembly-CSharp-firstpass.dll</HintPath>
+      </Reference>
       <Reference Include="CommandSystem.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
         <HintPath>lib\CommandSystem.Core.dll</HintPath>
-      </Reference>
-      <Reference Include="Mirror, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-        <HintPath>lib\Mirror.dll</HintPath>
       </Reference>
       <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
         <HintPath>lib\UnityEngine.CoreModule.dll</HintPath>
