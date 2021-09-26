@@ -1,4 +1,6 @@
-﻿namespace Pro079XGrenade
+﻿using UnityEngine.PlayerLoop;
+
+namespace Pro079XGrenade
 {
     using System;
     using System.Collections.Generic;
@@ -7,7 +9,7 @@
     using Exiled.API.Features.Items;
     using Pro079X.Interfaces;
     using CommandSystem;
-
+    using UnityEngine;
     public class GrenadeSpawnCommand : IUltimate079
     {
         public string Command { get; } = Pro079XGrenade.Singleton?.Translation.Command;
@@ -20,13 +22,13 @@
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
             Player ply = Player.Get((sender as CommandSender)?.SenderId);
-            List<Player> players = ply.CurrentRoom.Players.ToList();
+            List<Player> players = ply.CurrentRoom.Players.Where(player=>player.Team!=Team.SCP).ToList();
             
-            if (players[0] != null)
+            if (players.Count > 0)
             {
                 ExplosiveGrenade exp = new ExplosiveGrenade(ItemType.GrenadeHE, ply);
                 exp.ScpMultiplier = 0;
-                exp.FuseTime = 0;
+                exp.FuseTime = 1;
                 exp.SpawnActive(players[0].Position);
                 response = "funne";
                 return true;

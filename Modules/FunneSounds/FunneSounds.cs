@@ -1,27 +1,26 @@
-﻿namespace Pro079XGrenade
+﻿namespace FunneSounds
 {
     using System;
+    using Exiled.API.Interfaces;
     using Exiled.API.Features;
-    using Exiled.Events;
-    using Pro079X.Interfaces;
     using Pro079X.Logic;
-
-    public class Pro079XGrenade : Plugin<Configs.Config, Configs.Translations>
+    
+    public class FunneSounds : Plugin<Configs.Config, Configs.Translations>
     {
         public override string Author { get; } = "Nut Inc";
-        public override string Name { get; } = "Pro079XGrenade";
-        public override string Prefix { get; } = "pro_079_grenade";
+        public override string Name { get; } = "FunneSounds";
+        public override string Prefix { get; } = "funne_sounds";
         public override Version Version { get; } = new Version(1, 0, 0);
         public override Version RequiredExiledVersion { get; } = new Version(3, 0, 0);
         
-        public static Pro079XGrenade Singleton;
+        public static FunneSounds Singleton;
 
         public override void OnEnabled()
         {
             base.OnEnabled();
             Singleton = this;
             
-            Manager.RegisterUltimate(new GrenadeSpawnCommand());
+            Manager.RegisterCommand(new FunneSoundsCommand());
         }
 
         public override void OnDisabled()
