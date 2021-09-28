@@ -9,10 +9,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="EXILED" Version="3.0.0-alpha.87" />
-    </ItemGroup>
-
-    <ItemGroup>
       <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
         <HintPath>lib\Assembly-CSharp-Publicized.dll</HintPath>
       </Reference>
@@ -25,6 +21,10 @@
       <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
         <HintPath>lib\UnityEngine.CoreModule.dll</HintPath>
       </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="EXILED" Version="3.0.0-alpha.88" />
     </ItemGroup>
 
 </Project>
