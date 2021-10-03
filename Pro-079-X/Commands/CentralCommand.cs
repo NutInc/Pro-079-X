@@ -12,9 +12,9 @@ namespace Pro079X.Commands
     [CommandHandler(typeof(ClientCommandHandler))]
     public class CentralCommand : ICommand
     {
-        public string Command { get; } = "079";
-        public string[] Aliases { get; } = Array.Empty<string>();
-        public string Description { get; } = "Base command handler for Pro079";
+        public string Command => "079";
+        public string[] Aliases => Array.Empty<string>();
+        public string Description => "Base command handler for Pro079";
         
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {

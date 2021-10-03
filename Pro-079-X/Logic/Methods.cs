@@ -26,51 +26,63 @@
 
         internal static string FormatCommands()
         {
-            Log.Debug("Running Command Formatter");
             if (!Pro079X.Singleton.Config.EnableModules)
                 return string.Empty;
 
-            var builder = new StringBuilder();
-            builder.Append("\n<b><color=green>-- Commands --</color></b>\n");
+            StringBuilder stringBuilder = StringBuilderPool.Shared.Rent();
+            stringBuilder.AppendLine("-- Commands --");
             foreach (var command in Manager.Commands)
             {
-                builder.Append(".079" + " " + command?.ExtraArguments + " - " + command?.Description);
-                if (command != null) builder.Append(FormatEnergyLevel(command.Cost, command.MinLevel));
+                stringBuilder.AppendLine("<b>.079");
+                if (!string.IsNullOrEmpty(command.ExtraArguments))
+                {
+                    stringBuilder.Append(" ");
+                    stringBuilder.Append(command.ExtraArguments);
+                }
+
+                stringBuilder.Append("</b> - ");
+                stringBuilder.Append(command.Description);
+                stringBuilder.Append(FormatEnergyLevel(command.Cost, command.MinLevel));
             }
 
-            string str = builder.ToString();
-            StringBuilderPool.Shared.Return(builder);
+            string str = stringBuilder.ToString();
+            StringBuilderPool.Shared.Return(stringBuilder);
             return str;
         }
 
         internal static string FormatUltimates()
         {
-            Log.Debug("Running Ultimate Formatter");
             if (!Pro079X.Singleton.Config.EnableUltimates)
                 return string.Empty;
 
-            var builder = new StringBuilder();
-
-            builder.Append("\n<color=red><b>-- Ultimates --</b></color>\n");
-            foreach (var ult in Manager.Ultimates)
+            StringBuilder stringBuilder = StringBuilderPool.Shared.Rent();
+            stringBuilder.AppendLine("-- Ultimates --");
+            foreach (var ultimate in Manager.Ultimates)
             {
-                builder.Append("<color=yellow>"+".079" + " " + Pro079X.Singleton.Translation.UltCmd + " " + ult.Command + "</color>");
-                builder.Append(" - ");
-                builder.Append(ult.Description + " " + Pro079X.Singleton?.Translation.UltData.ReplaceAfterToken('$', new[]
-                {
-                    new Tuple<string, object>("cost", ult.Cost),
-                    new Tuple<string, object>("cd", ult.Cooldown)
-                }));
+                stringBuilder.AppendLine("<b>.079");
+                stringBuilder.Append(Pro079X.Singleton.Translation.UltCmd);
+                stringBuilder.Append(" ");
+                stringBuilder.Append(ultimate.Command);
+                stringBuilder.Append("</b>");
+                stringBuilder.Append(" - ");
+                stringBuilder.Append(ultimate.Description);
+                stringBuilder.Append(Pro079X.Singleton?.Translation.UltData);
+                stringBuilder.Append(stringBuilder.ToString()
+                    .ReplaceAfterToken('$', new[]
+                    {
+                        new Tuple<string, object>("cost", ultimate.Cost),
+                        new Tuple<string, object>("cd", ultimate.Cooldown)
+                    }));
             }
-            
-            string str = builder.ToString();
-            Log.Debug("Produced Ultimate String: " + str);
+
+            string str = stringBuilder.ToString();
+            StringBuilderPool.Shared.Return(stringBuilder);
             return str;
         }
 
         public static string FormatEnergyLevel(int energy, int level)
         {
-            var stringBuilder = new StringBuilder();
+            StringBuilder stringBuilder = StringBuilderPool.Shared.Rent();
             if (energy > 0)
                 stringBuilder.Append(Pro079X.Singleton?.Translation.Energy);
             if (level > 1)
