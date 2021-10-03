@@ -39,4 +39,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Plugin DLL
-        path: Pro079XBlackout/bin/Release/Pro079X*.dll
+        path: Pro079X/bin/Release/Pro079X*.dll
