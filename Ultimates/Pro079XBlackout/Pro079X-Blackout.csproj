@@ -93,21 +93,13 @@
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\..\Modules\Pro079XGenerators\Pro079XGenerators.csproj">
-        <Project>{125efb99-093a-4d86-a045-478dc9fd2c7d}</Project>
-        <Name>Pro079XGenerators</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\..\Pro-079-X\Pro-079-X.csproj">
-        <Project>{f2c470c4-8d4d-47c8-9f7b-155d58169aeb}</Project>
-        <Name>Pro-079-X</Name>
-      </ProjectReference>
+      <None Include="packages.config" />
+    </ItemGroup>
+    <ItemGroup>
       <ProjectReference Include="..\..\Pro079X\Pro079X.csproj">
         <Project>{f2c470c4-8d4d-47c8-9f7b-155d58169aeb}</Project>
         <Name>Pro079X</Name>
       </ProjectReference>
-    </ItemGroup>
-    <ItemGroup>
-      <None Include="packages.config" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
