@@ -33,7 +33,7 @@ jobs:
       run: ./7zip.exe e References.zip -oPro-079-X/lib/ -r -y
 
     - name: Build
-      run: dotnet build --configuration Release --no-restore CedMod.sln
+      run: dotnet build --configuration Release --no-restore Pro-079-X.sln
 
     - name: Upload Build
       uses: actions/upload-artifact@v2
