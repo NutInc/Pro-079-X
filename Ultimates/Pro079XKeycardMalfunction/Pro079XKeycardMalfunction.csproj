@@ -26,16 +26,16 @@
 
     <ItemGroup>
       <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-        <HintPath>>..\..\Pro-079-X\lib\Assembly-CSharp-Publicized.dll</HintPath>
+        <HintPath>lib\Assembly-CSharp-Publicized.dll</HintPath>
       </Reference>
       <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-        <HintPath>>..\..\Pro-079-X\lib\Assembly-CSharp-firstpass.dll</HintPath>
+        <HintPath>lib\Assembly-CSharp-firstpass.dll</HintPath>
       </Reference>
       <Reference Include="CommandSystem.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-        <HintPath>>..\..\Pro-079-X\lib\CommandSystem.Core.dll</HintPath>
+        <HintPath>lib\CommandSystem.Core.dll</HintPath>
       </Reference>
       <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-        <HintPath>>..\..\Pro-079-X\lib\UnityEngine.CoreModule.dll</HintPath>
+        <HintPath>lib\UnityEngine.CoreModule.dll</HintPath>
       </Reference>
     </ItemGroup>
 
