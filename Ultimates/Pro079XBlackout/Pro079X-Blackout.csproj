@@ -4,11 +4,11 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{9E41083F-4451-441E-BCC0-0DD3EE139FB7}</ProjectGuid>
+        <ProjectGuid>{5A558496-0D78-46C2-8EE3-ADE6A3FFC437}</ProjectGuid>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Pro079XGrenade</RootNamespace>
-        <AssemblyName>Pro079XGrenade</AssemblyName>
+        <RootNamespace>Pro079XBlackout</RootNamespace>
+        <AssemblyName>Pro079X-Blackout</AssemblyName>
         <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
@@ -33,13 +33,13 @@
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\Pro-079-X\lib\Assembly-CSharp-Publicized.dll</HintPath>
+          <HintPath>lib\Assembly-CSharp.dll</HintPath>
         </Reference>
         <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\Pro-079-X\lib\Assembly-CSharp-firstpass.dll</HintPath>
+          <HintPath>lib\Assembly-CSharp-firstpass.dll</HintPath>
         </Reference>
         <Reference Include="CommandSystem.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\Pro-079-X\lib\CommandSystem.Core.dll</HintPath>
+          <HintPath>lib\CommandSystem.Core.dll</HintPath>
         </Reference>
         <Reference Include="Exiled.API, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\..\packages\EXILED.3.0.0-alpha.87\lib\net472\Exiled.API.dll</HintPath>
@@ -78,20 +78,28 @@
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
         <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\Modules\Pro079XGenerators\lib\UnityEngine.CoreModule.dll</HintPath>
+          <HintPath>..\..\Pro-079-X\lib\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="BlackoutCommand.cs" />
         <Compile Include="Configs\Config.cs" />
         <Compile Include="Configs\Translations.cs" />
-        <Compile Include="GrenadeSpawnCommand.cs" />
-        <Compile Include="Pro079XGrenade.cs" />
+        <Compile Include="Plugin.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
+      <ProjectReference Include="..\..\Modules\Pro079XGenerators\Pro079XGenerators.csproj">
+        <Project>{125efb99-093a-4d86-a045-478dc9fd2c7d}</Project>
+        <Name>Pro079XGenerators</Name>
+      </ProjectReference>
       <ProjectReference Include="..\..\Pro-079-X\Pro-079-X.csproj">
         <Project>{f2c470c4-8d4d-47c8-9f7b-155d58169aeb}</Project>
         <Name>Pro-079-X</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\Pro079X\Pro079X.csproj">
+        <Project>{f2c470c4-8d4d-47c8-9f7b-155d58169aeb}</Project>
+        <Name>Pro079X</Name>
       </ProjectReference>
     </ItemGroup>
     <ItemGroup>
