@@ -40,10 +40,10 @@ jobs:
       run: ./7zip.exe e References.zip -oPro-079-X/lib/ -r -y
 
     - name: Build
-      run: msbuild Pro-079-X.sln -p:Configuration=release
+      run: dotnet build --configuration Release --no-restore Pro-079-X.sln
 
     - name: Upload Build
       uses: actions/upload-artifact@v2
       with:
         name: Plugin DLL
-        path: Pro-079-X/bin/Release/Pro079X*.dll
+        path: ${{ github.workspace }}/bin/Release/
