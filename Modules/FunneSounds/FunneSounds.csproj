@@ -10,16 +10,16 @@
 
     <ItemGroup>
       <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-        <HintPath>lib\Assembly-CSharp-Publicized.dll</HintPath>
+        <HintPath>>..\..\Pro-079-X\lib\Assembly-CSharp-Publicized.dll</HintPath>
       </Reference>
       <Reference Include="CommandSystem.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-        <HintPath>lib\CommandSystem.Core.dll</HintPath>
+        <HintPath>>..\..\Pro-079-X\lib\CommandSystem.Core.dll</HintPath>
       </Reference>
       <Reference Include="Mirror, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-        <HintPath>lib\Mirror.dll</HintPath>
+        <HintPath>>..\..\Pro-079-X\lib\Mirror.dll</HintPath>
       </Reference>
       <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-        <HintPath>lib\UnityEngine.CoreModule.dll</HintPath>
+        <HintPath>>..\..\Pro-079-X\lib\UnityEngine.CoreModule.dll</HintPath>
       </Reference>
     </ItemGroup>
 
