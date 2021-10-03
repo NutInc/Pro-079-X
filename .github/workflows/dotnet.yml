@@ -15,7 +15,7 @@ jobs:
       uses: iRebbok/setup-nuget@master
 
     - name: Restore Packages
-      run: nuget restore Pro-079-X.sln
+      run: nuget restore Pro079X.sln
 
     - name: Download references
       uses: carlosperate/download-file-action@v1.0.3
@@ -33,7 +33,7 @@ jobs:
       run: ./7zip.exe e References.zip -oPro-079-X/lib/ -r -y
 
     - name: Build
-      run: dotnet build --configuration Release --no-restore Pro-079-X.sln
+      run: dotnet build --configuration Release --no-restore Pro079X.sln
 
     - name: Upload Build
       uses: actions/upload-artifact@v2
