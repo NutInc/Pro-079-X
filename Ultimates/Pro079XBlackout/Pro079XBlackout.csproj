@@ -33,10 +33,10 @@
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\Pro-079-X\lib\Assembly-CSharp-firstpass.dll</HintPath>
+          <HintPath>lib\Assembly-CSharp-firstpass.dll</HintPath>
         </Reference>
         <Reference Include="CommandSystem.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\Pro079XGrenade\lib\CommandSystem.Core.dll</HintPath>
+          <HintPath>lib\CommandSystem.Core.dll</HintPath>
         </Reference>
         <Reference Include="Exiled.API, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\..\packages\EXILED.3.0.0-alpha.87\lib\net472\Exiled.API.dll</HintPath>
