@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - plz-work
   pull_request:
     branches:
       - master
