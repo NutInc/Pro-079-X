@@ -9,7 +9,6 @@ namespace Pro079XGrenade
     using Exiled.API.Features.Items;
     using Pro079X.Interfaces;
     using CommandSystem;
-    using UnityEngine;
     public class GrenadeSpawnCommand : IUltimate079
     {
         public string Command { get; } = Pro079XGrenade.Singleton?.Translation.Command;

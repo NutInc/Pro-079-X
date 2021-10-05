@@ -73,6 +73,9 @@
           <HintPath>..\packages\EXILED.3.0.0-alpha.87\lib\net472\Exiled.Updater.dll</HintPath>
           <Private>True</Private>
         </Reference>
+        <Reference Include="Mirror, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>lib\Mirror.dll</HintPath>
+        </Reference>
         <Reference Include="NorthwoodLib, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>lib\NorthwoodLib.dll</HintPath>
         </Reference>
@@ -80,9 +83,6 @@
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
-        <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>lib\UnityEngine.dll</HintPath>
-        </Reference>
         <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>lib\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
