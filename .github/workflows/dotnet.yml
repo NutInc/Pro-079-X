@@ -38,7 +38,7 @@ jobs:
         file-name: '7zip.exe'
 
     - name: Extract Refs
-      run: ./7zip.exe e References.zip -oPro-079-X/lib/ -r -y
+      run: ./7zip.exe e References.zip -olib/ -r -y
 
     - name: Build
       run: msbuild Pro-079-X.sln -p:Configuration=release
