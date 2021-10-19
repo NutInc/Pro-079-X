@@ -13,37 +13,37 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
+    
+    - name: Setup Nuget
+      uses: iRebbok/setup-nuget@master
+    
+    - name: Restore Packages
+      run: nuget restore Pro-079-X.sln
+      
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1
 
-      - name: Setup Nuget
-        uses: iRebbok/setup-nuget@master
+    - name: Download references
+      uses: carlosperate/download-file-action@v1.0.3
+      with:
+        file-url: 'https://www.exiled.host/build_deps/Dev.zip'
+        file-name: 'References.zip'
 
-      - name: Restore Packages
-        run: nuget restore Pro-079-X.sln
+    - name: Download 7zip
+      uses: carlosperate/download-file-action@v1.0.3
+      with:
+        file-url: 'https://www.exiled.host/7za.exe'
+        file-name: '7zip.exe'
 
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1
+    - name: Extract Refs
+      run: ./7zip.exe e References.zip -oPro-079-X/lib/ -r -y
 
-      - name: Download references
-        uses: carlosperate/download-file-action@v1.0.3
-        with:
-          file-url: 'https://www.exiled.host/build_deps/Dev.zip'
-          file-name: 'References.zip'
+    - name: Build
+      run: msbuild Pro-079-X.sln -p:Configuration=release
 
-      - name: Download 7zip
-        uses: carlosperate/download-file-action@v1.0.3
-        with:
-          file-url: 'https://www.exiled.host/7za.exe'
-          file-name: '7zip.exe'
-
-      - name: Extract Refs
-        run: ./7zip.exe e References.zip -oPro-079-X/lib/ -r -y
-
-      - name: Build
-        run: msbuild Pro-079-X.sln -p:Configuration=release
-
-      - name: Upload Build
-        uses: actions/upload-artifact@v2
-        with:
-          name: Plugin DLL
-          path: Pro-079-X/bin/Release/Pro079X*.dll
+    - name: Upload Build
+      uses: actions/upload-artifact@v2
+      with:
+        name: Plugin DLL
+        path: Pro-079-X/bin/Release/Pro079X*.dll
