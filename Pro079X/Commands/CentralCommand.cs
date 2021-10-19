@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace Pro079X.Commands
+﻿namespace Pro079X.Commands
 {
     using Interfaces;
     using CommandSystem;
@@ -18,6 +16,11 @@ namespace Pro079X.Commands
         
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
+            foreach (var a in Manager.Ultimates)
+            {
+                Log.Debug($"Possible command {a.Command}");
+            }
+            
             Player ply = Player.Get((sender as CommandSender)?.SenderId);
             if (!ply.IsScp079())
             {
@@ -32,7 +35,7 @@ namespace Pro079X.Commands
             }
             
             ICommand079 command = null;
-            Log.Debug(arguments.At(0));
+
             if (Methods.CommandExists(arguments.At(0)))
             {
                 command = Methods.GetCommand(arguments.At(0));

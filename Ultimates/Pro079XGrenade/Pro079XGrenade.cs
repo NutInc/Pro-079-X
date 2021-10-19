@@ -23,11 +23,5 @@
             
             Manager.RegisterUltimate(new GrenadeSpawnCommand());
         }
-
-        public override void OnDisabled()
-        {
-            Singleton = null;
-            base.OnDisabled();
-        }
     }
 }

@@ -4,7 +4,7 @@
     using Exiled.API.Features;
     using Pro079X.Logic;
     
-    public class Pro079XBlackout : Plugin<Configs.Config, Configs.Translations>
+    public class Plugin : Plugin<Configs.Config, Configs.Translations>
     {
         public override string Author { get; } = "Nut Inc";
         public override string Name { get; } = "Pro079XBlackout";
@@ -12,7 +12,7 @@
         public override Version Version { get; } = new Version(1, 0, 0);
         public override Version RequiredExiledVersion { get; } = new Version(3, 0, 0);
 
-        public static Pro079XBlackout Singleton;
+        public static Plugin Singleton;
 
         public override void OnEnabled()
         {
