@@ -20,7 +20,7 @@
         {
             base.OnEnabled();
             Singleton = this;
-            
+            //yes
             Manager.RegisterUltimate(new GrenadeSpawnCommand());
         }
     }
