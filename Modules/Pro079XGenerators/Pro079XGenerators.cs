@@ -5,7 +5,7 @@
     using Exiled.API.Features;
     using Pro079X.Logic;
     
-    public class Pro079XGenerators : Plugin<Config>
+    public class Pro079XGenerators : Plugin<Config, Translations>
     {
         internal static Pro079XGenerators Singleton;
         internal Translations Translations;
@@ -14,8 +14,8 @@
         {
             Singleton = this;
             Translations = new Translations();
-            /*if (!Manager.RegisterCommand(new GeneratorCommand()))
-                OnDisabled();*/
+            if (!Manager.RegisterCommand(new GeneratorCommand()))
+                OnDisabled();
 
             base.OnEnabled();
         }

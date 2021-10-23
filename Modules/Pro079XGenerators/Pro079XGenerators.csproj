@@ -77,6 +77,9 @@
           <HintPath>..\..\packages\EXILED.3.0.5\lib\net472\Exiled.Updater.dll</HintPath>
           <Private>True</Private>
         </Reference>
+        <Reference Include="Mirror, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\Pro-079-X\lib\Mirror.dll</HintPath>
+        </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
@@ -89,6 +92,7 @@
         <Compile Include="Configs\Config.cs" />
         <Compile Include="Configs\Translations.cs" />
         <Compile Include="GeneratorCommand.cs" />
+        <Compile Include="MapUtils.cs" />
         <Compile Include="Pro079XGenerators.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
