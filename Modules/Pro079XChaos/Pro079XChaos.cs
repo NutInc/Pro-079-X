@@ -9,7 +9,7 @@ namespace Pro079XChaos
     {
         public override string Author => "NutInc";
         public override Version Version => new Version(4, 0, 0);
-        public override string Name { get; } = "Pro079XGas";
+        public override string Name { get; } = "Pro079XChaos";
         internal static Pro079XChaos Singleton;
         internal Translations Translations;
 

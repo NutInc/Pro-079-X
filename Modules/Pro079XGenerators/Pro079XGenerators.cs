@@ -14,10 +14,8 @@
         {
             Singleton = this;
             Translations = new Translations();
-            if (!Manager.RegisterCommand(new GeneratorCommand()))
-                OnDisabled();
-
             base.OnEnabled();
+            Manager.RegisterCommand(new GeneratorCommand());
         }
 
         public override void OnDisabled()
@@ -28,6 +26,7 @@
         }
 
         public override string Author => "NutInc";
+        public override string Name { get; } = "Pro079XGenerators";
         public override Version Version => new Version(4, 0, 0);
     }
 }
