@@ -1,5 +1,6 @@
 ﻿using Exiled.API.Features;
 using System;
+using Pro079X.Logic;
 using Pro079XTeleport.Configs;
 
 namespace Pro079XTeleport
@@ -13,8 +14,7 @@ namespace Pro079XTeleport
         {
             Singleton = this;
             Translations = new Translations();
-            /*if (!Manager.RegisterCommand(new GeneratorCommand()))
-                OnDisabled();*/
+            Manager.RegisterCommand(new TeleportCommand());
 
             base.OnEnabled();
         }

@@ -56,6 +56,7 @@
         {
             PlayerEvents.ChangingRole += _playerHandlers.OnChangingRole;
             PlayerEvents.Died += _playerHandlers.OnDied;
+            PlayerEvents.Spawning += _playerHandlers.OnSpawning; 
             ServerEvents.WaitingForPlayers += _serverHandlers.OnWaitingForPlayers;
         }
 

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Pro079X.Logic
+﻿namespace Pro079X.Logic
 {
     using Interfaces;
     using System;
@@ -99,44 +97,26 @@ namespace Pro079X.Logic
 
         public static ICommand079 GetCommand(string command)
         {
-            return Manager.Commands.FirstOrDefault(command079 =>
-                command079.Command == command || command079.Aliases.Any(alias => alias == command));
+            return Manager.Commands.Where(c => c.Command == command).ToList()[0];
         }
 
         public static IUltimate079 GetUltimate(string command)
         {
-            return Manager.Ultimates.FirstOrDefault(ultimate079 =>
-                ultimate079.Command == command || ultimate079.Aliases.Any(alias => alias == command));
+            return Manager.Ultimates.Where(ultimate => ultimate.Command == command).ToList()[0];
         }
 
         public static bool UltimateExists(string command)
         {
-            Log.Debug($"Method UltimateExists() invoked with ultimate {command}");
-            Manager.Ultimates.ForEach(action=>Log.Debug($"Ultimate: {action.Command}"));
-            try
-            {
-                return Manager.Ultimates.FirstOrDefault(ultimate079 =>
-                    ultimate079.Command == command || ultimate079.Aliases.Any(alias => alias == command)) != null;
-            }
-            catch
-            {
-                Log.Debug($"Ultimate {command} does not exist!");
-                return false;
-            }
+            Log.Debug($"Method UltimateExists() invoked with ultimate:{command}");
+            Manager.Ultimates.ForEach(action=>Log.Debug($"Ultimate:{action.Command}"));
+            return Manager.Ultimates.Count(c => c.Command == command) > 0;
         }
         
         public static bool CommandExists(string command)
         {
-            try
-            {
-                return Manager.Commands.FirstOrDefault(command079 =>
-                    command079.Command == command || command079.Aliases.Any(alias => alias == command)) != null;
-            }
-            catch
-            {
-                Log.Debug($"Command {command} does not exist!");
-                return false;
-            }
+            Log.Debug($"Method CommandExists() invoked with command:{command}");
+            Manager.Commands.ForEach(action=>Log.Debug($"Command:{action.Command}"));
+            return Manager.Commands.Count(c => c.Command == command) > 0;
         }
         public static string LevelString(int level, bool uppercase = true)
         {

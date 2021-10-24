@@ -29,35 +29,14 @@ namespace Pro079XGenerators
         }
         private static IEnumerator<float> Fake5Gens()
         {
-            // People complained about it being "easy to be told apart". Not anymore.
-            NineTailedFoxAnnouncer annc = NineTailedFoxAnnouncer.singleton;
-            while (annc.queue.Count > 0 || AlphaWarheadController.Host.inProgress)
-            {
-                yield return Timing.WaitForSeconds(0f);
-            }
-
-            Respawning.RespawnEffectsController.PlayCassieAnnouncement("SCP079RECON5", false, true);
-            // This massive for loop jank is what the main game does. Go complain to them.
-            for (int i = 0; i < 2750; i++)
-            {
-                yield return Timing.WaitForSeconds(0f);
-            }
-
-            while (annc.queue.Count > 0 || AlphaWarheadController.Host.inProgress)
-            {
-                yield return Timing.WaitForSeconds(0f);
-            }
-            
-            MapUtils.TurnOffAllLights(10);
+            Exiled.API.Features.Cassie.Message("OVERCHARGING IN . 3 . 2 . 1");
+            yield return Timing.WaitForSeconds(Exiled.API.Features.Cassie.CalculateDuration("OVERCHARGING IN . 3 . 2 . 1"));
             MapUtils.LockAllDoors();
-
-            yield return Timing.WaitForSeconds(10);
-            
+            MapUtils.TurnOffAllLights(7);
+            yield return Timing.WaitForSeconds(5);
+            Exiled.API.Features.Cassie.Message("SCP 0 7 9 CONTAINED SUCCESSFULLY. ");
+            yield return Timing.WaitForSeconds(Exiled.API.Features.Cassie.CalculateDuration("SCP 0 7 9 CONTAINED SUCCESSFULLY. "));
             MapUtils.UnlockAllDoors();
-            
-            Respawning.RespawnEffectsController.PlayCassieAnnouncement("SCP079RECON6", false, true);
-            Respawning.RespawnEffectsController.PlayCassieAnnouncement("SCP 0 7 9 CONTAINEDSUCCESSFULLY", false, false);
-            
         }
     }
 }

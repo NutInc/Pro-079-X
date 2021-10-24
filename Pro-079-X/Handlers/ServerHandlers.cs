@@ -11,13 +11,5 @@
             Manager.UltimateCooldowns.Clear();
             Manager.CanSuicide = false;
         }
-
-        public void OnSpawning(SpawningEventArgs ev)
-        {
-            if (ev.RoleType == RoleType.Scp079)
-            {
-                ev.Player.Broadcast(5, "Type .079 help to unlock your full potential!");
-            }
-        }
     }
 }
