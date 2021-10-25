@@ -1,4 +1,6 @@
-﻿namespace Pro079X.Configs
+﻿using System.Collections.Generic;
+
+namespace Pro079X.Configs
 {
     using Exiled.API.Interfaces;
     using System.ComponentModel;

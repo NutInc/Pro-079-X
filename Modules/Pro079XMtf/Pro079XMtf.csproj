@@ -4,11 +4,11 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{125EFB99-093A-4D86-A045-478DC9FD2C7D}</ProjectGuid>
+        <ProjectGuid>{D536F6A0-150D-4B29-A9D9-B4DE27B34A33}</ProjectGuid>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Pro079XGenerators</RootNamespace>
-        <AssemblyName>Pro079XGenerators</AssemblyName>
+        <RootNamespace>Pro079XMtf</RootNamespace>
+        <AssemblyName>Pro079XMtf</AssemblyName>
         <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
@@ -34,9 +34,6 @@
     <ItemGroup>
         <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\..\Pro-079-X\lib\Assembly-CSharp-Publicized.dll</HintPath>
-        </Reference>
-        <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\Pro-079-X\lib\Assembly-CSharp-firstpass.dll</HintPath>
         </Reference>
         <Reference Include="CommandSystem.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\..\Pro-079-X\lib\CommandSystem.Core.dll</HintPath>
@@ -77,33 +74,26 @@
           <HintPath>..\..\packages\EXILED.3.1.1\lib\net472\Exiled.Updater.dll</HintPath>
           <Private>True</Private>
         </Reference>
-        <Reference Include="Mirror, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\Pro-079-X\lib\Mirror.dll</HintPath>
-        </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
-        <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\Pro-079-X\lib\UnityEngine.CoreModule.dll</HintPath>
-        </Reference>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Configs\Config.cs" />
         <Compile Include="Configs\Translations.cs" />
-        <Compile Include="GeneratorCommand.cs" />
-        <Compile Include="MapUtils.cs" />
-        <Compile Include="Pro079XGenerators.cs" />
+        <Compile Include="MtfCommand.cs" />
+        <Compile Include="Pro079XMtf.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="packages.config" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\..\Pro-079-X\Pro-079-X.csproj">
         <Project>{f2c470c4-8d4d-47c8-9f7b-155d58169aeb}</Project>
         <Name>Pro-079-X</Name>
       </ProjectReference>
-    </ItemGroup>
-    <ItemGroup>
-      <None Include="packages.config" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

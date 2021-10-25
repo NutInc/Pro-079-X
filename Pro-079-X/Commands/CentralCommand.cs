@@ -1,4 +1,7 @@
-﻿namespace Pro079X.Commands
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace Pro079X.Commands
 {
     using Interfaces;
     using CommandSystem;
@@ -13,7 +16,7 @@
         public string Command { get; } = "079";
         public string[] Aliases { get; } = Array.Empty<string>();
         public string Description { get; } = "Base command handler for Pro079";
-        //
+        
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
             foreach (var a in Manager.Ultimates)
@@ -22,6 +25,7 @@
             }
             
             Player ply = Player.Get((sender as CommandSender)?.SenderId);
+
             if (!ply.IsScp079())
             {
                 response = Pro079X.Singleton?.Translation.NotScp079;
