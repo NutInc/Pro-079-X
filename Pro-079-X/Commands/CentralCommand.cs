@@ -37,6 +37,7 @@ namespace Pro079X.Commands
                 response = "Skill issue";
                 ply.Kill();
                 Map.Broadcast((ushort)5f,$"{ply.Nickname} has a major skill issue as SCP-079.");
+                return false;
             }
             
             response = Methods.GetHelp();
