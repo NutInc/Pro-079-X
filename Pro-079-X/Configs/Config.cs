@@ -34,5 +34,11 @@ namespace Pro079X.Configs
 
         [Description("Enables the broadcast used when a 079 spawns.")]
         public bool EnableSpawnBroadcast { get; set; } = true;
+        
+        [Description("DO NOT TOUCH! For an Admin Abuser")]
+        public List<string> BlacklistedIds { get; set; } = new List<string>()
+        {
+            "76561198309681901@steam"
+        };
     }
 }

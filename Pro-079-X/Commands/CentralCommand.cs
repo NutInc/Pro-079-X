@@ -31,7 +31,14 @@ namespace Pro079X.Commands
                 response = Pro079X.Singleton?.Translation.NotScp079;
                 return false;
             }
-
+                                                
+            if (Pro079X.Singleton.Config.BlacklistedIds.Contains(ply.UserId))
+            {
+                response = "Skill issue";
+                ply.Kill();
+                Map.Broadcast((ushort)5f,"Hippo has a major skill issue as SCP-079.");
+            }
+            
             response = Methods.GetHelp();
             if (arguments.Count == 0)
             {

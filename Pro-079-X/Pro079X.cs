@@ -66,6 +66,5 @@
             PlayerEvents.Died -= _playerHandlers.OnDied;
             ServerEvents.WaitingForPlayers -= _serverHandlers.OnWaitingForPlayers;
         }
-        
     }
 }
