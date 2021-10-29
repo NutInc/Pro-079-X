@@ -43,7 +43,10 @@ jobs:
 
     - name: Build
       run: msbuild Pro-079-X.sln -p:Configuration=release
-
+    
+    - name: Move Files
+      run: move Pro079X*.dll Pro-079-X/bin/Release/Pro079X*.dll
+    
     - name: Upload Build
       uses: actions/upload-artifact@v2
       with:
