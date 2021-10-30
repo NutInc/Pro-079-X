@@ -14,6 +14,7 @@ namespace Pro079XTesla
         internal Translations Translations;
         internal bool IsActive;
         internal CoroutineHandle CoroutineHandle;
+        public override string Prefix { get; } = "pro_079X_tesla";
 
         public override void OnEnabled()
         {

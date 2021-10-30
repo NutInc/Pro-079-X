@@ -10,6 +10,7 @@ namespace Pro079XScp
     {
         internal static Pro079XScp Singleton;
         internal Configs.Translations Translations;
+        public override string Prefix { get; } = "pro_079X_scp";
 
         public override void OnEnabled()
         {

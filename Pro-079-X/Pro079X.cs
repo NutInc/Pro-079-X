@@ -20,6 +20,7 @@
         //
         public override string Author { get; } = "NutInc";
         public override string Name { get; } = "Pro079X";
+        public override string Prefix { get; } = "pro_079X";
         public override Version Version { get; } = new Version(1, 0, 0);
         public override PluginPriority Priority { get; } = PluginPriority.First;
 

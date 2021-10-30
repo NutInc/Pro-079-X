@@ -9,6 +9,7 @@ namespace Pro079XMtf
     {
         internal static Pro079XMtf Singleton;
         internal Translations Translations;
+        public override string Prefix { get; } = "pro_079X_mtf";
 
         public override void OnEnabled()
         {

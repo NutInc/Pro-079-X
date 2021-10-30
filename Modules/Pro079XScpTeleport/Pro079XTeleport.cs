@@ -9,6 +9,7 @@ namespace Pro079XTeleport
     {
         internal static Pro079XTeleport Singleton;
         internal Translations Translations;
+        public override string Prefix { get; } = "pro_079X_teleport";
 
         public override void OnEnabled()
         {

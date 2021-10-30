@@ -9,6 +9,7 @@
     {
         internal static Pro079XGenerators Singleton;
         internal Translations Translations;
+        public override string Prefix { get; } = "pro_079X_generators";
 
         public override void OnEnabled()
         {
