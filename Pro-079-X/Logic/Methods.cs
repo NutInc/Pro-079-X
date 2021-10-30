@@ -30,12 +30,13 @@
             if (!Pro079X.Singleton.Config.EnableModules)
                 return string.Empty;
 
-            var builder = new StringBuilder();
+            StringBuilder builder = new StringBuilder();
             builder.Append("\n<b><color=green>-- Commands --</color></b>\n");
             foreach (var command in Manager.Commands)
             {
-                builder.Append(".079" + " " + command?.ExtraArguments + " - " + command?.Description);
+                builder.Append($"<b><color=red>.079 {command.Command} </color></b>" + " " + command?.ExtraArguments + " - " + command?.Description);
                 if (command != null) builder.Append(FormatEnergyLevel(command.Cost, command.MinLevel));
+                builder.Append("\n");
             }
 
             string str = builder.ToString();
@@ -61,6 +62,7 @@
                     new Tuple<string, object>("cost", ult.Cost),
                     new Tuple<string, object>("cd", ult.Cooldown)
                 }));
+                builder.Append("\n");
             }
             
             string str = builder.ToString();

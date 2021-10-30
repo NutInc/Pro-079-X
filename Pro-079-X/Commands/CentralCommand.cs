@@ -19,11 +19,6 @@ namespace Pro079X.Commands
         
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
-            foreach (var a in Manager.Ultimates)
-            {
-                Log.Debug($"Possible command {a.Command}");
-            }
-            
             Player ply = Player.Get((sender as CommandSender)?.SenderId);
 
             if (!ply.IsScp079())
@@ -78,6 +73,8 @@ namespace Pro079X.Commands
 
                     if (command.MinLevel > ply.Level)
                     {
+                        Log.Debug($"Current Level: {ply.Level}");
+                        Log.Debug($"Required Level: {command.MinLevel}");
                         response = Pro079X.Singleton?.Translation.LowLevel;
                         return false;
                     }
@@ -109,13 +106,11 @@ namespace Pro079X.Commands
 
                 if (Methods.UltimateExists(arguments.At(1)))
                 {
-                    Log.Debug("Ultimate is not null!");
                     ultimate = Methods.GetUltimate(arguments.At(1));
                 }
                 
                 if (ultimate == null)
                 {
-                    Log.Debug("Invoked and returning ultimate");
                     return true;
                 }
                 
