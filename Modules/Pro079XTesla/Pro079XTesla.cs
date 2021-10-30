@@ -37,6 +37,8 @@ namespace Pro079XTesla
         }
 
         public override string Author => "Build";
+        public override string Name { get; } = "Pro079XTesla";
+
         public override Version Version => new Version(4, 0, 0);
     }
 }

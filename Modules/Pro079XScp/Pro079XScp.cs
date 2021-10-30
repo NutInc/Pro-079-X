@@ -29,5 +29,7 @@ namespace Pro079XScp
 
         public override string Author => "NutInc";
         public override Version Version => new Version(4, 0, 0);
+
+        public override string Name { get; } = "Pro079XScp";
     }
 }
