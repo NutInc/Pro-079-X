@@ -21,11 +21,9 @@ namespace Pro079XTesla
             Singleton = this;
             Translations = new Translations();
             _eventHandlers = new EventHandlers();
-            PlayerEvents.TriggeringTesla += _eventHandlers.OnTriggeringTesla;
-            if (!Manager.RegisterCommand(new TeslaCommand()))
-                OnDisabled();
-
             base.OnEnabled();
+            PlayerEvents.TriggeringTesla += _eventHandlers.OnTriggeringTesla;
+            Manager.RegisterCommand(new TeslaCommand());
         }
 
         public override void OnDisabled()

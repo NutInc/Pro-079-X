@@ -16,9 +16,8 @@ namespace Pro079XScp
         {
             Singleton = this;
             Translations = new Configs.Translations();
-            Manager.RegisterCommand(new ScpCommand());
-
             base.OnEnabled();
+            Manager.RegisterCommand(new ScpCommand());
         }
 
         public override void OnDisabled()
