@@ -36,7 +36,7 @@ namespace Pro079XTesla
             base.OnDisabled();
         }
 
-        public override string Author => "Build";
+        public override string Author => "NutInc";
         public override string Name { get; } = "Pro079XTesla";
 
         public override Version Version => new Version(4, 0, 0);

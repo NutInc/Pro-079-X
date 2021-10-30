@@ -35,7 +35,7 @@
             foreach (var command in Manager.Commands)
             {
                 builder.Append($"<b><color=red>.079 {command.Command} </color></b>" + " " + command?.ExtraArguments + " - " + command?.Description);
-                if (command != null) builder.Append(FormatEnergyLevel(command.Cost, command.MinLevel));
+                builder.Append(FormatEnergyLevel(command.Cost, command.MinLevel));
                 builder.Append("\n");
             }
 
@@ -46,7 +46,6 @@
 
         internal static string FormatUltimates()
         {
-            Log.Debug("Running Ultimate Formatter");
             if (!Pro079X.Singleton.Config.EnableUltimates)
                 return string.Empty;
 
@@ -97,29 +96,13 @@
             return stringBuilder.ToString();
         }
 
-        public static ICommand079 GetCommand(string command)
-        {
-            return Manager.Commands.Where(c => c.Command == command).ToList()[0];
-        }
+        public static ICommand079 GetCommand(string command) => Manager.Commands.Where(c => c.Command == command).ToList()[0];
 
-        public static IUltimate079 GetUltimate(string command)
-        {
-            return Manager.Ultimates.Where(ultimate => ultimate.Command == command).ToList()[0];
-        }
+        public static IUltimate079 GetUltimate(string command) => Manager.Ultimates.Where(ultimate => ultimate.Command == command).ToList()[0];
 
-        public static bool UltimateExists(string command)
-        {
-            Log.Debug($"Method UltimateExists() invoked with ultimate:{command}");
-            Manager.Ultimates.ForEach(action=>Log.Debug($"Ultimate:{action.Command}"));
-            return Manager.Ultimates.Count(c => c.Command == command) > 0;
-        }
-        
-        public static bool CommandExists(string command)
-        {
-            Log.Debug($"Method CommandExists() invoked with command:{command}");
-            Manager.Commands.ForEach(action=>Log.Debug($"Command:{action.Command}"));
-            return Manager.Commands.Count(c => c.Command == command) > 0;
-        }
+        public static bool UltimateExists(string command) => Manager.Ultimates.Count(c => c.Command == command) > 0;
+
+        public static bool CommandExists(string command) => Manager.Commands.Count(c => c.Command == command) > 0;
         public static string LevelString(int level, bool uppercase = true)
         {
             if (uppercase || char.IsDigit(Pro079X.Singleton.Translation.Level[0]))
