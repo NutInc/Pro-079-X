@@ -5,6 +5,7 @@ on:
     branches:
       - master
       - dev
+      - broken
   pull_request:
     branches:
       - master
