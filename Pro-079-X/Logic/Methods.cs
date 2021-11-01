@@ -65,7 +65,6 @@
             }
             
             string str = builder.ToString();
-            Log.Debug("Produced Ultimate String: " + str);
             return str;
         }
 
