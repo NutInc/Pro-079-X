@@ -53,7 +53,8 @@ namespace Pro079X.Commands
             {
                 if (Pro079X.Singleton.Config.EnableCassieCooldown && ply.OnCassieCooldown())
                 {
-                    response = Pro079X.Singleton?.Translation.CassieOnCooldown;
+                    response = Methods.OnCooldownString(Pro079X.Singleton.Translation.CassieOnCooldown,
+                        command.Cooldown - (Manager.CassieCooldowns[ply].Second + DateTime.Now.Second));
                     return false;
                 }
 
@@ -67,7 +68,7 @@ namespace Pro079X.Commands
                 {
                     if (command.Cost > ply.Energy)
                     {
-                        response = Pro079X.Singleton?.Translation.LowEnergy;
+                        response = Methods.LowApString(Pro079X.Singleton.Translation.LowEnergy, command.Cost);
                         return false;
                     }
 
@@ -75,7 +76,7 @@ namespace Pro079X.Commands
                     {
                         Log.Debug($"Current Level: {ply.Level}");
                         Log.Debug($"Required Level: {command.MinLevel}");
-                        response = Pro079X.Singleton?.Translation.LowLevel;
+                        response = Methods.LowLevelString(Pro079X.Singleton.Translation.LowLevel, command.MinLevel);
                         return false;
                     }
                 }
@@ -116,7 +117,8 @@ namespace Pro079X.Commands
                 
                 if (ply.OnUltimateCooldown())
                 {
-                    response = Pro079X.Singleton?.Translation.Cooldown;
+                    response = Methods.OnCooldownString(Pro079X.Singleton.Translation.UltDown,
+                        ultimate.Cooldown - (Manager.CassieCooldowns[ply].Second + DateTime.Now.Second));
                     return false;
                 }
 
@@ -124,13 +126,13 @@ namespace Pro079X.Commands
                 {
                     if (ply.Energy < ultimate.Cost)
                     {
-                        response = Pro079X.Singleton?.Translation.LowEnergy;
+                        response = Methods.LowApString(Pro079X.Singleton?.Translation.LowEnergy, (int)ply.Energy);
                         return false;
                     }
 
-                    if (ply.Level < Pro079X.Singleton?.Config.UltimateLevel)
+                    if (ply.Level < Pro079X.Singleton.Config.UltimateLevel)
                     {
-                        response = Pro079X.Singleton?.Translation.LowLevel;
+                        response = Methods.LowLevelString(Pro079X.Singleton.Translation.UltLocked, Pro079X.Singleton.Config.UltimateLevel);
                         return false;
                     }
                 }

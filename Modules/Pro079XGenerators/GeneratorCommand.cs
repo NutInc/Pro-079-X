@@ -1,5 +1,6 @@
 ﻿using Exiled.API.Enums;
 using Interactables.Interobjects.DoorUtils;
+using UnityEngine;
 
 namespace Pro079XGenerators
 {
@@ -30,13 +31,15 @@ namespace Pro079XGenerators
         private static IEnumerator<float> Fake5Gens()
         {
             Exiled.API.Features.Cassie.Message("OVERCHARGING IN . 3 . 2 . 1");
-            yield return Timing.WaitForSeconds(Exiled.API.Features.Cassie.CalculateDuration("OVERCHARGING IN . 3 . 2 . 1"));
+            for (int i = 0; i < Application.targetFrameRate * Exiled.API.Features.Cassie.CalculateDuration("OVERCHARGING IN . 3 . 2 . 1") + 4; i++)
+            {
+                yield return 0f;
+            }
             MapUtils.LockAllDoors();
             MapUtils.TurnOffAllLights(7);
             yield return Timing.WaitForSeconds(5);
-            Exiled.API.Features.Cassie.Message("SCP 0 7 9 CONTAINED SUCCESSFULLY. ");
-            yield return Timing.WaitForSeconds(Exiled.API.Features.Cassie.CalculateDuration("SCP 0 7 9 CONTAINED SUCCESSFULLY. "));
             MapUtils.UnlockAllDoors();
+            Exiled.API.Features.Cassie.Message("SCP 0 7 9 CONTAINED SUCCESSFULLY.");
         }
     }
 }

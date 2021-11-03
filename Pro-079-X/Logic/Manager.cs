@@ -61,7 +61,10 @@
             
             if (!string.IsNullOrEmpty(command079.CommandReady))
             {
-                ply.Broadcast(10, command079.CommandReady);
+                if (ply.Role == RoleType.Scp079)
+                {
+                    ply.Broadcast(10, command079.CommandReady);
+                }
             }
         }
     }

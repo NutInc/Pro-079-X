@@ -20,7 +20,6 @@ namespace Pro079XGenerators
         {
             foreach (FlickerableLightController controller in FlickerableLightController.Instances)
             {
-                Room room = controller.GetComponentInParent<Room>();
                 controller.ServerFlickerLights(duration);
             }
         }
@@ -30,5 +29,7 @@ namespace Pro079XGenerators
             foreach (Door door in Map.Doors)
                 door.ChangeLock(DoorLockType.None);
         }
+        
+        
     }
 }

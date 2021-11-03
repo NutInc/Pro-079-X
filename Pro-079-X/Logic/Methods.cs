@@ -7,6 +7,7 @@
     using CommandSystem;
     using Exiled.API.Features;
     using NorthwoodLib.Pools;
+
     public static class Methods
     {
         private static string _helpMessage;
@@ -34,7 +35,8 @@
             builder.Append("\n<b><color=green>-- Commands --</color></b>\n");
             foreach (var command in Manager.Commands)
             {
-                builder.Append($"<b><color=red>.079 {command.Command} </color></b>" + " " + command?.ExtraArguments + " - " + command?.Description);
+                builder.Append($"<b><color=red>.079 {command.Command} </color></b>" + " " + command?.ExtraArguments +
+                               " - " + command?.Description);
                 builder.Append(FormatEnergyLevel(command.Cost, command.MinLevel));
                 builder.Append("\n");
             }
@@ -54,16 +56,18 @@
             builder.Append("\n<color=red><b>-- Ultimates --</b></color>\n");
             foreach (var ult in Manager.Ultimates)
             {
-                builder.Append("<color=yellow>"+".079" + " " + Pro079X.Singleton.Translation.UltCmd + " " + ult.Command + "</color>");
+                builder.Append("<color=yellow>" + ".079" + " " + Pro079X.Singleton.Translation.UltCmd + " " +
+                               ult.Command + "</color>");
                 builder.Append(" - ");
-                builder.Append(ult.Description + " " + Pro079X.Singleton?.Translation.UltData.ReplaceAfterToken('$', new[]
-                {
-                    new Tuple<string, object>("cost", ult.Cost),
-                    new Tuple<string, object>("cd", ult.Cooldown)
-                }));
+                builder.Append(ult.Description + " " + Pro079X.Singleton?.Translation.UltData.ReplaceAfterToken('$',
+                    new[]
+                    {
+                        new Tuple<string, object>("cost", ult.Cost),
+                        new Tuple<string, object>("cd", ult.Cooldown)
+                    }));
                 builder.Append("\n");
             }
-            
+
             string str = builder.ToString();
             return str;
         }
@@ -95,13 +99,16 @@
             return stringBuilder.ToString();
         }
 
-        public static ICommand079 GetCommand(string command) => Manager.Commands.Where(c => c.Command == command).ToList()[0];
+        public static ICommand079 GetCommand(string command) =>
+            Manager.Commands.Where(c => c.Command == command).ToList()[0];
 
-        public static IUltimate079 GetUltimate(string command) => Manager.Ultimates.Where(ultimate => ultimate.Command == command).ToList()[0];
+        public static IUltimate079 GetUltimate(string command) =>
+            Manager.Ultimates.Where(ultimate => ultimate.Command == command).ToList()[0];
 
         public static bool UltimateExists(string command) => Manager.Ultimates.Count(c => c.Command == command) > 0;
 
         public static bool CommandExists(string command) => Manager.Commands.Count(c => c.Command == command) > 0;
+
         public static string LevelString(int level, bool uppercase = true)
         {
             if (uppercase || char.IsDigit(Pro079X.Singleton.Translation.Level[0]))
@@ -112,5 +119,12 @@
 
             return Pro079X.Singleton?.Translation.Level.Replace("$lvl", level.ToString());
         }
+                                                                            
+        public static string LowLevelString(string message, int level) =>
+            message.Replace("$lvl", level.ToString());
+        
+        public static string OnCooldownString(string message, int cooldown) => message.Replace("$cds", cooldown.ToString());
+        
+        public static string LowApString(string message, int ap) => message.Replace("$ap", ap.ToString());
     }
 }

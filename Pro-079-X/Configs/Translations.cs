@@ -18,7 +18,7 @@
         
         public string Level { get; set; } = "level $lvl";
         public string Energy { get; set; } = "$ap ap";
-        public string LowLevel { get; set; } = "Your level is too low (Level $min required)";
+        public string LowLevel { get; set; } = "Your level is too low (Level $lvl required)";
         public string LowEnergy { get; set; } = "Not enough AP ($ap AP required)";
         public string Success { get; set; } = "Command launched successfully";
         public string UltimateLaunched { get; set; } = "Ultimate successfully used";
@@ -28,7 +28,7 @@
         public string UltData { get; set; } = "(Cost: $cost | Cooldown: $cd)";
         public string TipsHelp { get; set; } = "Tips about SCP-079 and stuff to take into account";
         public string UltDown { get; set; } = "You must wait $cds before using ultimates again.";
-        public string Cooldown { get; set; } = "You have to wait $cds before using this command again";
+        public string Cooldown { get; set; } = "You have to wait before using this command again";
 
         public string CassieOnCooldown { get; set; } =
             "Wait $cds before using a command that requires CASSIE (the announcer)";
@@ -45,7 +45,7 @@
         public string CassieReady { get; set; } = "<color=#85ff4c>Announcer (CASSIE) commands ready</color>";
         public string UltReady { get; set; } = "<color=#85ff4c>Ultimates ready</color>";
         public string CantSuicide { get; set; } = "You can't suicide when there's other SCP's remaining";
-        public string UltLocked { get; set; } = "To use an ultimate, you need level $lvl";
+        public string UltLocked { get; set; } = "To use an ultimate, you need to be level $lvl";
         public string Kys { get; set; } = "<color=#AA1515>Press ` and write \".079 suicide\" to kill yourself.</color>";
         public string UltUsageFirstLine { get; set; } = "Usage: .079 ultimate <name>";
         public string MiniDisabled { get; set; } = "disabled";
