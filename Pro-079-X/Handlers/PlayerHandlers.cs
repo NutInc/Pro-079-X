@@ -54,7 +54,7 @@
         {
             if (ev.RoleType == RoleType.Scp079)
             {
-                ev.Player.Broadcast(5, "Type .079 help to unlock your full potential!");
+                ev.Player.Broadcast(10, "<b><color=red>Type <color=green>.079</color> in console to see additional abilities!</color></b> (Plugin still WIP expect broken features)");
             }
         }
     }
