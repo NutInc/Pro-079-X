@@ -86,7 +86,7 @@ namespace Pro079X.Commands
                     return false;
 
                 Manager.CoroutineHandles.Add(Timing.RunCoroutine(Manager.SetOnCooldown(ply, command)));
-                if (Pro079X.Singleton.Config.EnableCassieCooldown)
+                if (Pro079X.Singleton.Config.EnableCassieCooldown && command.Cassie)
                     Manager.CassieCooldowns[ply] =
                         DateTime.Now + TimeSpan.FromSeconds(Pro079X.Singleton.Config.CassieCooldown);
                 if (!ply.IsBypassModeEnabled)

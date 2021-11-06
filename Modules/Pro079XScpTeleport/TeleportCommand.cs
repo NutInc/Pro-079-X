@@ -9,15 +9,15 @@ namespace Pro079XTeleport
 {
     public class TeleportCommand : ICommand079
     {
-        public string Command { get; } = Pro079XTeleport.Singleton.Translations.Command;
+        public string Command => Pro079XTeleport.Singleton.Translations.Command;
         public string[] Aliases { get; } = Array.Empty<string>();
-        public string Description { get; } = Pro079XTeleport.Singleton.Translations.Description;
+        public string Description => Pro079XTeleport.Singleton.Translations.Description;
         public string ExtraArguments { get; } = string.Empty;
         public bool Cassie { get; } = false;
-        public int Cooldown { get; } = Pro079XTeleport.Singleton.Config.Cooldown;
-        public int MinLevel { get; } = Pro079XTeleport.Singleton.Config.Level;
-        public int Cost { get; } = Pro079XTeleport.Singleton.Config.Cost;
-        public string CommandReady { get; } = Pro079XTeleport.Singleton.Translations.CommandReady;
+        public int Cooldown => Pro079XTeleport.Singleton.Config.Cooldown;
+        public int MinLevel => Pro079XTeleport.Singleton.Config.Level;
+        public int Cost => Pro079XTeleport.Singleton.Config.Cost;
+        public string CommandReady => Pro079XTeleport.Singleton.Translations.CommandReady;
         
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {

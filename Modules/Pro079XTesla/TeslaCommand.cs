@@ -26,10 +26,13 @@ namespace Pro079XTesla
                 response = Pro079XTesla.Singleton.Translations.Usage;
                 return false;
             }
-
+            Log.Debug($"Seconds delay: {seconds}");
             _plySender = Player.Get((sender as CommandSender)?.SenderId);
-
-            Pro079XTesla.Singleton.CoroutineHandle = Timing.RunCoroutine(TeslaCountdown(seconds));
+            Pro079XTesla.Singleton.IsActive = false;
+            Timing.CallDelayed(seconds, () =>
+            {
+                Pro079XTesla.Singleton.IsActive = true;
+            });
             response = Pro079X.Pro079X.Singleton.Translation.Success;
             return true;
         }
@@ -47,21 +50,5 @@ namespace Pro079XTesla
 
         private Player _plySender;
         private int _secondsRemaining;
-
-        private IEnumerator<float> TeslaCountdown(int seconds)
-        {
-            Pro079XTesla.Singleton.IsActive = true;
-            _secondsRemaining = seconds;
-            for (int i = 0; i < seconds; i++)
-            {
-                if (Pro079XTesla.Singleton.Config.GrantExperience)
-                    _plySender.Experience++;
-
-                _secondsRemaining--;
-                yield return 0f;
-            }
-
-            Pro079XTesla.Singleton.IsActive = false;
-        }
     }
 }

@@ -9,28 +9,23 @@ namespace Pro079XTesla
 {
     public class Pro079XTesla : Plugin<Config, Translations>
     {
-        private EventHandlers _eventHandlers;
         internal static Pro079XTesla Singleton;
         internal Translations Translations;
-        internal bool IsActive;
-        internal CoroutineHandle CoroutineHandle;
+        internal bool IsActive = true;
         public override string Prefix { get; } = "pro_079X_tesla";
 
         public override void OnEnabled()
         {
             Singleton = this;
             Translations = new Translations();
-            _eventHandlers = new EventHandlers();
             base.OnEnabled();
-            PlayerEvents.TriggeringTesla += _eventHandlers.OnTriggeringTesla;
+            PlayerEvents.TriggeringTesla += EventHandlers.OnTriggeringTesla;
             Manager.RegisterCommand(new TeslaCommand());
         }
 
         public override void OnDisabled()
         {
-            PlayerEvents.TriggeringTesla -= _eventHandlers.OnTriggeringTesla;
-            Timing.KillCoroutines(CoroutineHandle);
-            _eventHandlers = null;
+            PlayerEvents.TriggeringTesla -= EventHandlers.OnTriggeringTesla;
             Translations = null;
             Singleton = null;
             base.OnDisabled();

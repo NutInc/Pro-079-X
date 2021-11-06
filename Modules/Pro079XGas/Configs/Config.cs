@@ -8,5 +8,7 @@ namespace Pro079XGas.Configs
         public int Cooldown { get; set; } = 50;
         public int Cost { get; set; } = 50;
         public int Level { get; set; } = 2;
+
+        public int GasDuration { get; set; } = 5;
     }
 }

@@ -27,14 +27,14 @@ namespace Pro079XGas
             return true;
         }
 
-        public string Command { get; } = Pro079XGas.Singleton.Translations.Command;
+        public string Command => Pro079XGas.Singleton.Translations.Command;
         public string[] Aliases { get; } = Array.Empty<string>();
-        public string Description { get; } = Pro079XGas.Singleton.Translations.Description;
+        public string Description => Pro079XGas.Singleton.Translations.Description;
         public string ExtraArguments { get; } = string.Empty;
-        public bool Cassie { get; } = false;
-        public int Cooldown { get; } = Pro079XGas.Singleton.Config.Cooldown;
-        public int MinLevel { get; } = Pro079XGas.Singleton.Config.Level;
-        public int Cost { get; } = Pro079XGas.Singleton.Config.Cost;
-        public string CommandReady { get; } = Pro079XGas.Singleton.Translations.CommandReady;
+        public bool Cassie => false;
+        public int Cooldown => Pro079XGas.Singleton.Config.Cooldown;
+        public int MinLevel => Pro079XGas.Singleton.Config.Level;
+        public int Cost => Pro079XGas.Singleton.Config.Cost;
+        public string CommandReady => Pro079XGas.Singleton.Translations.CommandReady;
     }
 }

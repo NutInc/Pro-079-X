@@ -13,15 +13,15 @@ namespace Pro079XGenerators
     
     public class GeneratorCommand : ICommand079
     {
-        public string Command { get; } = Pro079XGenerators.Singleton.Translations.Command;
+        public string Command => Pro079XGenerators.Singleton.Translations.Command;
         public string[] Aliases { get; } = Array.Empty<string>();
-        public string Description { get; } = Pro079XGenerators.Singleton.Translations.Description;
+        public string Description => Pro079XGenerators.Singleton.Translations.Description;
         public string ExtraArguments { get; } = string.Empty;
         public bool Cassie { get; } = true;
-        public int Cooldown { get; } = Pro079XGenerators.Singleton.Config.Cooldown;
-        public int MinLevel { get; } = Pro079XGenerators.Singleton.Config.Level;
-        public int Cost { get; } = Pro079XGenerators.Singleton.Config.Cost;
-        public string CommandReady { get; } = Pro079XGenerators.Singleton.Translations.CommandReady;
+        public int Cooldown => Pro079XGenerators.Singleton.Config.Cooldown;
+        public int MinLevel => Pro079XGenerators.Singleton.Config.Level;
+        public int Cost => Pro079XGenerators.Singleton.Config.Cost;
+        public string CommandReady => Pro079XGenerators.Singleton.Translations.CommandReady;
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
             Timing.RunCoroutine(Fake5Gens());

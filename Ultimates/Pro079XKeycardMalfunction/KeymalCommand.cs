@@ -9,11 +9,11 @@ namespace Pro079XKeycardMalfunction
     public class KeymalCommand : IUltimate079
     {
         
-        public string Command { get; } = Pro079XKeycardMalfunction.Singleton.Translation.Command;
+        public string Command => Pro079XKeycardMalfunction.Singleton.Translation.Command;
         
-        public string Description { get; } = Pro079XKeycardMalfunction.Singleton.Translation.Description;
-        public int Cooldown { get; } = Pro079XKeycardMalfunction.Singleton.Config.Cooldown;
-        public int Cost { get; } = Pro079XKeycardMalfunction.Singleton.Config.Cost;
+        public string Description => Pro079XKeycardMalfunction.Singleton.Translation.Description;
+        public int Cooldown => Pro079XKeycardMalfunction.Singleton.Config.Cooldown;
+        public int Cost => Pro079XKeycardMalfunction.Singleton.Config.Cost;
         
         public string[] Aliases { get; }
         

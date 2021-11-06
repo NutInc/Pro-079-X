@@ -10,13 +10,13 @@
 
     public class GrenadeSpawnCommand : IUltimate079
     {
-        public string Command { get; } = Pro079XGrenade.Singleton?.Translation.Command;
+        public string Command => Pro079XGrenade.Singleton?.Translation.Command;
 
         public string[] Aliases { get; } = Array.Empty<string>();
         
-        public string Description { get; } = Pro079XGrenade.Singleton?.Translation.Description;
-        public int Cooldown { get; } = Pro079XGrenade.Singleton.Config.Cooldown;
-        public int Cost { get; } = Pro079XGrenade.Singleton.Config.Cost;
+        public string Description => Pro079XGrenade.Singleton?.Translation.Description;
+        public int Cooldown => Pro079XGrenade.Singleton.Config.Cooldown;
+        public int Cost => Pro079XGrenade.Singleton.Config.Cost;
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
             Player ply = Player.Get((sender as CommandSender)?.SenderId);
