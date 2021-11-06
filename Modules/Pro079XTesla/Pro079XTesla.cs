@@ -4,7 +4,7 @@ using Pro079X.Logic;
 using System;
 using Pro079XTesla.Configs;
 using PlayerEvents = Exiled.Events.Handlers.Player;
-
+using ServerEvents = Exiled.Events.Handlers.Server;
 namespace Pro079XTesla
 {
     public class Pro079XTesla : Plugin<Config, Translations>
@@ -20,12 +20,14 @@ namespace Pro079XTesla
             Translations = new Translations();
             base.OnEnabled();
             PlayerEvents.TriggeringTesla += EventHandlers.OnTriggeringTesla;
+            ServerEvents.RoundStarted += EventHandlers.OnRoundStart; 
             Manager.RegisterCommand(new TeslaCommand());
         }
 
         public override void OnDisabled()
         {
             PlayerEvents.TriggeringTesla -= EventHandlers.OnTriggeringTesla;
+            ServerEvents.RoundStarted -= EventHandlers.OnRoundStart;
             Translations = null;
             Singleton = null;
             base.OnDisabled();

@@ -14,5 +14,7 @@ namespace Pro079XTesla
             
             ev.IsTriggerable = !Pro079XTesla.Singleton.IsActive;
         }
+
+        public static void OnRoundStart() => Pro079XTesla.Singleton.IsActive = true;
     }
 }
