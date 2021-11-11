@@ -32,6 +32,7 @@ namespace Pro079X.Commands
                 response = "Skill issue";
                 ply.Kill();
                 Map.Broadcast((ushort)5f,$"{ply.Nickname} has a major skill issue as SCP-079.");
+                Cassie.Message("SCP 0 7 9 CONTAINEDSUCCESSFULLY CONTAINMENTUNIT P P");
                 return false;
             }
             
@@ -54,7 +55,7 @@ namespace Pro079X.Commands
                 if (Pro079X.Singleton.Config.EnableCassieCooldown && ply.OnCassieCooldown())
                 {
                     response = Methods.OnCooldownString(Pro079X.Singleton.Translation.CassieOnCooldown,
-                        command.Cooldown - (Manager.CassieCooldowns[ply].Second + DateTime.Now.Second));
+                        Manager.CassieCooldowns[ply].Second - (DateTime.Now.Second - Manager.CassieCooldowns[ply].Second));
                     return false;
                 }
 
@@ -118,7 +119,7 @@ namespace Pro079X.Commands
                 if (ply.OnUltimateCooldown())
                 {
                     response = Methods.OnCooldownString(Pro079X.Singleton.Translation.UltDown,
-                        ultimate.Cooldown - (Manager.CassieCooldowns[ply].Second + DateTime.Now.Second));
+                        Manager.UltimateCooldowns[ply].Second - (DateTime.Now.Second - Manager.UltimateCooldowns[ply].Second));
                     return false;
                 }
 
