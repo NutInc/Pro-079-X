@@ -55,7 +55,7 @@ namespace Pro079X.Commands
                 if (Pro079X.Singleton.Config.EnableCassieCooldown && ply.OnCassieCooldown())
                 {
                     response = Methods.OnCooldownString(Pro079X.Singleton.Translation.CassieOnCooldown,
-                        Manager.CassieCooldowns[ply].Second - (DateTime.Now.Second - Manager.CassieCooldowns[ply].Second));
+                        Manager.CassieCooldowns[ply].Second - DateTime.Now.Second);
                     return false;
                 }
 
@@ -119,7 +119,7 @@ namespace Pro079X.Commands
                 if (ply.OnUltimateCooldown())
                 {
                     response = Methods.OnCooldownString(Pro079X.Singleton.Translation.UltDown,
-                        Manager.UltimateCooldowns[ply].Second - (DateTime.Now.Second - Manager.UltimateCooldowns[ply].Second));
+                        Manager.CassieCooldowns[ply].Second - DateTime.Now.Second);
                     return false;
                 }
 
