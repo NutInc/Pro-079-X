@@ -49,5 +49,13 @@
             for (int i = 0; i < pcCount; i++)
                 pcPlayers[i].Broadcast(5, "");
         }
+
+        public void OnSpawning(SpawningEventArgs ev)
+        {
+            if (ev.RoleType == RoleType.Scp079)
+            {
+                ev.Player.Broadcast(10, "<b><color=red>Type <color=green>.079</color> in console to see additional abilities!</color></b> (Plugin still WIP expect broken features)");
+            }
+        }
     }
 }

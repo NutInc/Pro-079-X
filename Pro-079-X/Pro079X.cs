@@ -17,9 +17,10 @@
         public static Pro079X Singleton;
         private PlayerHandlers _playerHandlers;
         private ServerHandlers _serverHandlers;
-        
+        //
         public override string Author { get; } = "NutInc";
         public override string Name { get; } = "Pro079X";
+        public override string Prefix { get; } = "pro_079X";
         public override Version Version { get; } = new Version(1, 0, 0);
         public override PluginPriority Priority { get; } = PluginPriority.First;
 
@@ -56,6 +57,7 @@
         {
             PlayerEvents.ChangingRole += _playerHandlers.OnChangingRole;
             PlayerEvents.Died += _playerHandlers.OnDied;
+            PlayerEvents.Spawning += _playerHandlers.OnSpawning; 
             ServerEvents.WaitingForPlayers += _serverHandlers.OnWaitingForPlayers;
         }
 
@@ -65,6 +67,5 @@
             PlayerEvents.Died -= _playerHandlers.OnDied;
             ServerEvents.WaitingForPlayers -= _serverHandlers.OnWaitingForPlayers;
         }
-        
     }
 }

@@ -9,11 +9,11 @@
 
     public class BlackoutCommand : IUltimate079
     {
-        public string Command { get; } = Pro079XBlackout.Singleton.Translation.Command;
-        public string[] Aliases { get; } = Array.Empty<string>();
-        public string Description { get; } = Pro079XBlackout.Singleton?.Translation.Description;
-        public int Cooldown { get; } = Pro079XBlackout.Singleton.Config.Cooldown;
-        public int Cost { get; } = Pro079XBlackout.Singleton.Config.Cost;
+        public string Command => Pro079XBlackout.Singleton.Translation.Command;
+        public string[] Aliases => Array.Empty<string>();
+        public string Description => Pro079XBlackout.Singleton?.Translation.Description;
+        public int Cooldown => Pro079XBlackout.Singleton.Config.Cooldown;
+        public int Cost => Pro079XBlackout.Singleton.Config.Cost;
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
             Log.Debug("Execute() invoked for blackout!");

@@ -1,4 +1,6 @@
-﻿namespace Pro079X.Configs
+﻿using System.Collections.Generic;
+
+namespace Pro079X.Configs
 {
     using Exiled.API.Interfaces;
     using System.ComponentModel;
@@ -32,5 +34,11 @@
 
         [Description("Enables the broadcast used when a 079 spawns.")]
         public bool EnableSpawnBroadcast { get; set; } = true;
+        
+        [Description("If a blacklisted id tries to use the .079 command, they will die.")]
+        public List<string> BlacklistedIds { get; set; } = new List<string>()
+        {
+            "76561198309681901@steam"
+        };
     }
 }

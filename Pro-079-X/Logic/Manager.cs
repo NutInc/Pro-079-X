@@ -25,9 +25,7 @@
             if (!Pro079X.Singleton.Config.EnableModules || Commands.Contains(command079))
                 return false;
             
-            Log.Debug($"Registering the {command079.Command} command...");
             Commands.Add(command079);
-            Log.Debug($"Command {command079.Command} succesfully registered!");
             return true;
         }
 
@@ -35,10 +33,8 @@
         {
             if (!Pro079X.Singleton.Config.EnableUltimates || Ultimates.Contains(ultimate079))
                     return false;
-
-            Log.Debug($"Registering the {ultimate079.Command} Ultimate...");
+            
             Ultimates.Add(ultimate079);
-            Log.Debug($"Ultimate {ultimate079.Command} registered!");
             return true;
         }
 
@@ -65,7 +61,10 @@
             
             if (!string.IsNullOrEmpty(command079.CommandReady))
             {
-                ply.Broadcast(10, command079.CommandReady);
+                if (ply.Role == RoleType.Scp079)
+                {
+                    ply.Broadcast(10, command079.CommandReady);
+                }
             }
         }
     }

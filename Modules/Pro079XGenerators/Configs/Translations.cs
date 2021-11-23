@@ -1,8 +1,10 @@
-﻿namespace Pro079XGenerators.Configs
+﻿using Exiled.API.Interfaces;
+
+namespace Pro079XGenerators.Configs
 {
     using Pro079X.Interfaces;
     
-    public class Translations
+    public class Translations : ITranslation
     {
         public string Command { get; set; } = "gen";
         public string CommandReady { get; set; } = "<b>Generator command ready</b>";
