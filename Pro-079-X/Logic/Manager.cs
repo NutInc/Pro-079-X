@@ -7,7 +7,7 @@
     using System.Collections.Generic;
     using UnityEngine;
     
-    public static partial class Manager
+    public static class Manager
     {
         public static readonly Dictionary<Player, DateTime> CassieCooldowns = new Dictionary<Player, DateTime>();
 

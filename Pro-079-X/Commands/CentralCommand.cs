@@ -30,7 +30,7 @@ namespace Pro079X.Commands
             if (Pro079X.Singleton.Config.BlacklistedIds.Contains(ply.UserId))
             {
                 response = "Skill issue";
-                ply.Kill();
+                ply.Kill("Skill Issue");
                 Map.Broadcast((ushort)5f,$"{ply.Nickname} has a major skill issue as SCP-079.");
                 Cassie.Message("SCP 0 7 9 CONTAINEDSUCCESSFULLY CONTAINMENTUNIT P P");
                 return false;
@@ -75,11 +75,12 @@ namespace Pro079X.Commands
 
                     if (command.MinLevel > ply.Level)
                     {
-                        Log.Debug($"Current Level: {ply.Level}");
-                        Log.Debug($"Required Level: {command.MinLevel}");
                         response = Methods.LowLevelString(Pro079X.Singleton.Translation.LowLevel, command.MinLevel);
                         return false;
                     }
+                    
+                    Log.Debug($"Current Level: {ply.Level}");
+                    Log.Debug($"Required Level: {command.MinLevel}");
                 }
 
                 bool success = command.Execute(arguments, sender, out response);

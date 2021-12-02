@@ -23,7 +23,7 @@
             Player ply = Player.Get((sender as CommandSender)?.SenderId);
             if (Manager.CanSuicide)
             {
-                ply.Kill(DamageTypes.Recontainment);
+                ply.Kill("Suicide");
                 response = Pro079X.Singleton?.Translation.Success;
                 return true;
             }
@@ -31,11 +31,5 @@
             response = Pro079X.Singleton?.Translation.CantSuicide;
             return false;
         }
-
-        public void PlayFunnySounds(Player ply)
-        {
-            
-        }
-        
     }
 }
